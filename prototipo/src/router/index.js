@@ -53,33 +53,35 @@ const routes = [
       {
         path:'Administracion',
         name:'Administracion',
-        component: () => import('../views/Administrador/BarraAdmin.vue'),
+        component: () => import('../views/Empleado/BarraAdmin.vue'),
       },
       {
         path:'Cliente',
         name:'Cliente',
-        component: ()=>  import('../views/Administrador/Cliente.vue')
+        component: ()=>  import('../views/Empleado/Cliente.vue')
       },
       {
         path:'Detalle_contacto',
         name:'Detalle_contacto',
-        component: ()=> import('../views/Administrador/Detalle_contacto.vue')
+        component: ()=> import('../views/Empleado/Detalle_contacto.vue')
       },
       {
         path:'Detalle_orden',
         name:'Detalle_orden',
-        component: ()=> import('../views/Administrador/detalle_orden.vue')
+        component: ()=> import('../views/Empleado/detalle_orden.vue')
       },
       {
         path:'Detalle_producto',
         name:'Detalle_producto',
-        component:()=> import('../views/Administrador/DetalleProducto.vue')
+        component:()=> import('../views/Empleado/DetalleProducto.vue')
       },
       {
         path:'Tablas_cliente',
         name:'Tablas_cliente',
-        component:()=> import('../views/Administrador/TablasCliente.vue')
-      } 
+        component:()=> import('../views/Empleado/TablasCliente.vue')
+      }
+      
+      
     ],
   },
 ];
