@@ -79,9 +79,7 @@ const routes = [
         path:'Tablas_cliente',
         name:'Tablas_cliente',
         component:()=> import('../views/Administrador/TablasCliente.vue')
-      }
-      
-      
+      } 
     ],
   },
 ];
