@@ -30,7 +30,8 @@
            <td>{{ item.Apellido }}</td>
            <td>{{ item.Direccion }}</td>
            <td>{{ item.Correo }}</td>
-         </tr>
+          <td><v-btn color="grey-darken-4" type="block">Detalles</v-btn></td> 
+         </tr>s
        </tbody>
      </v-table>
  

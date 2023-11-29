@@ -183,15 +183,19 @@ export default {
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn
-                  color="blue-darken-1"
+                  color="grey-darken-4"
                   variant="text"
+                  type="block"
+                  size="large"
                   @click="close"
                 >
                   Cancelar
                 </v-btn>
                 <v-btn
-                  color="blue-darken-1"
+                  color="grey-darken-4"
                   variant="text"
+                  type="block"
+                  size="large"
                   @click="save"
                 >
                   Guardar
@@ -240,7 +244,9 @@ export default {
       </template>
       <template v-slot:no-data>
         <v-btn
-          color="primary"
+          color="grey-darken-4"
+          size="large"
+          type="block"
           @click="initialize"
         >
           Reset

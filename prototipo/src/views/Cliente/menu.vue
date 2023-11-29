@@ -33,16 +33,15 @@
 <RouterLink to="carrito"><v-app-bar-title class="hidden-sm-and-down pr-6"><v-icon color="white">mdi-cart</v-icon></v-app-bar-title></RouterLink>
 
 </v-app-bar>
-
-     
     <v-app-bar  class="pl-4" app color="red" dark>
-      
       <span class="headline font-weight-bold">
         🔥 «Adquiere los mejores suplementos deportivos con nosotros | Envíos a domicilio»
       </span>
     </v-app-bar>
     <carrusel></carrusel>
     <RouterView></RouterView>
+    <barraadmin></barraadmin>
+
     </v-app>
     </template>
     <style>
@@ -97,6 +96,7 @@
     import { ref } from 'vue'
     import carrusel from './carrusel.vue'
     import final from './footer.vue'
-    import { RouterLink, RouterView } from 'vue-router'      
+    import { RouterLink, RouterView } from 'vue-router' 
+    import barraadmin from '../Administrador/Proveedores.vue'
       const drawer = ref(null)
     </script>

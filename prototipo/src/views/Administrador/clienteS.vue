@@ -3,7 +3,7 @@
     <v-row>
            <v-col>
             <v-row>
-                <h1 style="margin-bottom: 30px; margin-top: 40px;">Direcciones</h1>
+                <h1 class="titl">Direcciones</h1>
             </v-row>
           <v-card  text="Datos Basicos" width="500px" margin="auto" >
             <v-card-item>
@@ -33,5 +33,13 @@
     <style>
     .v-col{
         justify-content: center;
+    }
+    .titl{
+      display: flex;
+      justify-self: center;
+      text-align: center;
+      margin-bottom: 30px;
+      margin-left: 25px;
+      margin-top: 20px;
     }
     </style>
