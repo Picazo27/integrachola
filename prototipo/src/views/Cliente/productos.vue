@@ -33,6 +33,9 @@
           </v-card-actions>
         </v-card>
       </v-col>
+      <h1 class="red">¿PORQUÉ COMPRAR EN PICAZO GYM?</h1>
+<h2 class="ce">Contamos con una amplia variedad de suplementos deportivos en México. Además tienes la opción de pagar tu pedido en cuando recojas en tienda o se te entregue en tu domicilio, contamos con terminal. El proceso de  pedido es muy sencillo y seguro ¡Pruébalo!</h2>
+
     </v-row>
   </v-container>
 </template>
@@ -42,7 +45,14 @@
   width: 750px;
   height: 300px;
  }
+ .red{
+  color:#B71C1C;
+  text-align: center;
+ }
   h1 {
+    text-align: center;
+  }
+  .ce{
     text-align: center;
   }
 
