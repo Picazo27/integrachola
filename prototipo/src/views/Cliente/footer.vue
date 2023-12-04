@@ -9,6 +9,7 @@
             </p>
           </v-col>
           <v-col cols="6" md="3">
+            <h2>Contactanos</h2>
             <h3>Enlaces Rápidos</h3>
             <ul>
               <li><a href="#">Inicio</a></li>

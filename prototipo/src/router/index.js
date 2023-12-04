@@ -8,9 +8,14 @@ const routes = [
     component: () => import('../views/Cliente/menu.vue'), 
     children: [
       {
+        path: '', // La ruta vacía corresponde al componente principal del menú
+        redirect: 'productos' // Redirecciona a la ruta 'productos'
+      },
+      {
         path: 'productos',
         component: () => import('../views/Cliente/productos.vue'),
       },
+      
       {
         path: 'suplementos',
         component: () => import('../views/Cliente/productos.vue'),
