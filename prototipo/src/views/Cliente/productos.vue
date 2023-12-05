@@ -15,10 +15,7 @@
         >
           <v-card-item>
             <div>
-              <div class="text-overline mb-4">
-                {{ product.variant }}
-              </div>
-              <div class="text-h6 mb-1">
+              <div class="text-h6 mb-1 text-center">
                 {{ product.title }}
               </div>
               <div class="producto"><img :src="product.image"></div>
@@ -26,9 +23,7 @@
           </v-card-item>
 
           <v-card-actions>
-            <v-btn>
-              Agregar al Carrito
-            </v-btn>
+           <botoncart></botoncart>
             <input type="number">
           </v-card-actions>
         </v-card>
@@ -99,10 +94,10 @@
     <h1 class="red">Proteinas</h1>
     <v-row align="center">
       <v-col cols="12" sm="6">
-        <h2>El consumo de proteína ayuda a los atletas a mejorar su rendimiento físico durante los entrenamientos o sesiones de ejercicio intenso. En nuestra tienda podrás encontrar una amplia variedad de suplementos de proteínas, desde proteína de suero hasta proteína de soja. Visíta nuestra Categoría de Proteínas</h2>
+        <v-img src="https://whey.cl/wp-content/uploads/2020/11/cual-es-la-mejor-proteina-para-ganar-masa-muscular-sin-engordar-1.png"></v-img>
       </v-col>
       <v-col cols="12" sm="6">
-        <v-img src="https://whey.cl/wp-content/uploads/2020/11/cual-es-la-mejor-proteina-para-ganar-masa-muscular-sin-engordar-1.png"></v-img>
+        <h2>El consumo de proteína ayuda a los atletas a mejorar su rendimiento físico durante los entrenamientos o sesiones de ejercicio intenso. En nuestra tienda podrás encontrar una amplia variedad de suplementos de proteínas, desde proteína de suero hasta proteína de soja. Visíta nuestra Categoría de Proteínas</h2>
       </v-col>
     </v-row>
   </v-col>
@@ -127,10 +122,10 @@
   <h1 class="red">Aminoacidos</h1>
 <v-row align="center">
   <v-col cols="12" sm="6">
-    <h2>La ingesta de suplementos de aminoácidos ayudan a la recuperación de los músculos después de las sesiones de ejercicio físico o de un entrenamiento de fuerza. La suplementación deportiva con éste tipo de productos también incrementa el rendimiento físico dado que el perfil de aminoácidos potencia el incremento muscular. </h2>
+    <v-img src="https://mui.fitness/__export/1675972656166/sites/muifitness/img/2023/02/09/young-man-preparing-his-protein-drink-royalty-free-image-618752694-1546431880.jpg_1223424624.jpg"></v-img>
   </v-col>
   <v-col cols="12" sm="6">
-    <v-img src="https://mui.fitness/__export/1675972656166/sites/muifitness/img/2023/02/09/young-man-preparing-his-protein-drink-royalty-free-image-618752694-1546431880.jpg_1223424624.jpg"></v-img>
+    <h2>La ingesta de suplementos de aminoácidos ayudan a la recuperación de los músculos después de las sesiones de ejercicio físico o de un entrenamiento de fuerza. La suplementación deportiva con éste tipo de productos también incrementa el rendimiento físico dado que el perfil de aminoácidos potencia el incremento muscular. </h2>
   </v-col>
 </v-row>
 </v-col>
@@ -149,6 +144,7 @@
 </v-row>
   </v-col>
 </v-row>
+<seccion></seccion>
 
   </v-container>
 </template>
@@ -156,7 +152,9 @@
 <style>
 @media screen and (min-width: 790px) {
   .red {
-    color: #B71C1C;
+    color: #D70000;
+    padding-bottom: 4px;
+    padding-top: 4px;
   }
   img {
     width: 750px;
@@ -173,7 +171,9 @@
     text-align: center;
   }
   
-
+.ce{
+  text-align: center;
+}
   input {
     height: 30px;
     width: 70px;
@@ -182,6 +182,8 @@
 </style>
 
 <script setup>
+import botoncart from '@/components/botonagg.vue'
+import seccion from '@/components/section.vue'
   const products = [
     {
       variant: 'outlined',

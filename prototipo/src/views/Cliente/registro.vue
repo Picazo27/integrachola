@@ -1,72 +1,58 @@
-
 <template>
-                             <h1 class="re">Registro</h1>
-
-    <div class="login d-flex align-center justify-center" style="height: 100vh">
-
-      <v-sheet width="800" class="mx-auto d-flex">
-
-        <v-form class="flex-column" fast-fail @submit.prevent="login">
-          <v-text-field v-model="username" label="Nombre"></v-text-field>
+  <h1 class="re">Registro</h1>
+  <div class="login d-flex align-center justify-center">
+    <v-sheet class="mx-auto d-flex">
+      <v-form class="flex-row" fast-fail @submit.prevent="">
+        <div class="flex-column">
+          <v-text-field label="Nombre"></v-text-field>
           <v-text-field label="Apellido Paterno"></v-text-field>
-          <v-text-field label="Apellido Materno"></v-text-field>
           <v-text-field label="Calle"></v-text-field>
-          <v-text-field label="Numero de casa"></v-text-field>
           <v-text-field label="Colonia"></v-text-field>
-        </v-form>
-        
+          <v-text-field label="C.P (Código Postal)"></v-text-field>
+          <v-text-field label="Contraseña"></v-text-field>
+        </div>
         <div class="separator"></div>
-        
-        <v-form class="flex-column" fast-fail @submit.prevent="login">
-          <v-text-field label="C.P (Código Postal)" v-model="postalCode"></v-text-field>
-          <v-text-field label="Correo Electronico" v-model="correo"></v-text-field>
+        <div class="flex-column">
+          <v-text-field label="Apellido Materno"></v-text-field>
+          <v-text-field label="Numero de casa"></v-text-field>
+          <v-text-field label="Correo Electronico"></v-text-field>
           <v-text-field label="Telefono"></v-text-field>
-          <v-text-field v-model="password" label="Contraseña"></v-text-field>
           <v-text-field label="Confirmar Contrasena"></v-text-field>
-          <v-btn type="submit" color="grey-darken-4" block class="mt-2">Registrarte</v-btn>  
+          <botonreg></botonreg>
           <div class="mt-2">
-            <p class="text-body-2">Tienes Cuenta? <a href="#">Inicia Sesion</a></p>
+            <h3>Tienes Cuenta?</h3>
+            <RouterLink to="iniciosesion"><h3>Inicia Sesion</h3></RouterLink>
           </div>
-        </v-form>
-      </v-sheet>
-    </div>
-  </template>
-  
-  <style scoped>
-  .logop {
-    width: 100px;
-    height: 140px;
-    margin: auto;
-    display: flex;
-}
-  
-  .separator {
-    width: 20px; 
-  }
-  
-  .d-flex {
-    display: flex;
-  }
-  
-  .flex-column {
-    flex: 1; 
-    flex-direction: column;
-  }
-  .re{
-    text-align: center;
-  }
+        </div>
+      </v-form>
+    </v-sheet>
+  </div>
+</template>
 
-  </style>
-  
-  <script setup>
-  import { ref } from 'vue';
-  
-  const username = ref('');
-  const password = ref('');
-  const postalCode = ref('');
-  
-  const login = () => {
-    // Lógica para el inicio de sesión
-  };
-  </script>
-  
+<style scoped>
+/* ... */
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.re{
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.flex-column {
+  flex-basis: calc(50% - 10px);
+  margin-bottom: 20px;
+  width: 500px;
+}
+
+/* Media Query para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+  .flex-column {
+    flex-basis: 100%;
+    width:200px;
+  }
+}
+
+</style>

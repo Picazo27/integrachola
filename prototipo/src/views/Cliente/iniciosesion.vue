@@ -5,14 +5,14 @@
         max-width="180"
         src="../assets/logopicazo.png"
       ></v-img>
-      <h1>Inicia Sesion</h1>
+      
       <v-card
         class="mx-auto pa-12 pb-8"
         elevation="8"
         max-width="448"
         rounded="lg"
        
-      >
+      ><h1 class="text-center">Inicia Sesion</h1>
         <div class="text-subtitle-1 text-medium-emphasis">Cuenta</div>
   
         <v-text-field
@@ -26,7 +26,7 @@
           Contrasena
   
           <a
-            class="text-caption text-decoration-none text-blue"
+            class="text-caption text-decoration-none text-red"
             href="#"
             rel="noopener noreferrer"
             target="_blank"
@@ -65,8 +65,13 @@
         </v-btn>
   
       </v-card>
+      <br>
+      
     </div>
   </template>
+  <style>
+
+</style>
   <script>
     export default {
       data: () => ({
