@@ -1,49 +1,74 @@
 <template>
-    
-    <v-footer color="grey-darken-4">
-      
-        <v-row>
-          <v-col cols="12" md="6">
-            <img  class="logop" src="../img/logopicazo.png" alt="Logo Empresa" height="50px">  <p>
-              Somos un gimnasio comprometido con tu bienestar. Ofrecemos una amplia gama de suplementos para ayudarte a alcanzar tus metas fitness.
-            </p>
-          </v-col>
-          <v-col cols="6" md="3">
-            <h3>Enlaces Rápidos</h3>
-            <ul>
-              <li><a href="#">Inicio</a></li>
-              <li><a href="#">Productos</a></li>
-              <li><a href="#">Contacto</a></li>
-            </ul>
-          </v-col>
-          <v-col cols="6" md="3">
-            <h3>Redes Sociales</h3>
-            <v-row>
-              <v-col cols="3">
-                <v-icon>mdi-facebook</v-icon>
-              </v-col>
-              <v-col cols="3">
-                <v-icon>mdi-whatsapp</v-icon>
-              </v-col>
-              <v-col cols="3">
-                <v-icon>mdi-instagram</v-icon>
-              </v-col>
-            </v-row>
-          </v-col>
-        </v-row>
-    
-    </v-footer>
-  </template>
-  <style>
-.logop{
+  <v-footer color="grey-darken-4">
+    <v-container>
+      <v-row>
+        <v-col cols="12" md="4" class="text-center">
+          <img src="../img/logopicazo.png" alt="Picazo Gym Logo" class="logop">
+          <p class="mt-4">Contamos con los mejores suplementos deportivos en línea. Enviamos a todo Torreón, Gómez Lerdo. Calidad 100% garantizada.</p>
+        </v-col>
+        <v-col cols="12" md="4">
+          <h3>SUPLEMENTOS DEPORTIVOS</h3>
+          <ul>
+            <li>Proteínas</li>
+            <li>Creatinas</li>
+            <li>Óxido Nítrico</li>
+            <li>Aminoácidos</li>
+            <li>BCAA</li>
+            <li>Quemadores de Grasa</li>
+            <li>Ganadores de Masa</li>
+          </ul>
+        </v-col>
+        <v-col cols="12" md="4">
+          <h3>SÍGUENOS</h3>
+          <ul>
+            <li>Facebook</li>
+            <li>Whatsapp</li>
+            <li>Instagram</li>
+          </ul>
+          <h3>CONTÁCTANOS</h3>
+          <ul>
+            <li>Teléfono: 123-456-789</li>
+            <li>Email: info@picazogym.com</li>
+          </ul>
+        </v-col>
+      </v-row>
+      <v-row align="center" justify="center">
+        <v-col>
+          <p class="mt-4">Contamos con los mejores suplementos deportivos en línea. Enviamos a todo Torreón, Gómez Lerdo. Calidad 100% garantizada.</p>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-footer>
+</template>
+
+<style>
+  .logop {
     width: 110px;
-    height: 160px;
-}
-*{
-  font-family: Helvetica;
-}
-.contenedor{
-  position: static;
-}
+    height: auto;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 960px) {
+    .logop {
+      width: 80px;
+    }
+
+    li,
+    p {
+      font-size: 14px;
+    }
+  }
 </style>
-  
