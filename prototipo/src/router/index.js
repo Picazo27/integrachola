@@ -55,6 +55,7 @@ const routes = [
             name: 'metodopago',
             component: () => import('../views/Cliente/Carrito/metodopago.vue'),
       },
+      
       {
         path:'Administracion',
         name:'Administracion',

@@ -76,6 +76,10 @@ const productos = ref([
 const removerProducto = (index) => {
   productos.value.splice(index, 1);
 };
+const agregarProductoAlCarrito = (producto) => {
+  carritoStore.agregarProducto(producto);
+};
+const carritoStore = useCarritoStore();
 
 const actualizarCantidad = (index) => {
 };

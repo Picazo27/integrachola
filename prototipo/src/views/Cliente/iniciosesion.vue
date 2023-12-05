@@ -54,7 +54,7 @@
           </v-card-text>
         </v-card>
   
-        <v-btn
+       <router-link to="Administracion"><v-btn
           block
           class="mb-8"
           color="grey-darken-4"
@@ -62,7 +62,7 @@
          
         >
            Inicia Sesion
-        </v-btn>
+        </v-btn></router-link> 
   
       </v-card>
       <br>
