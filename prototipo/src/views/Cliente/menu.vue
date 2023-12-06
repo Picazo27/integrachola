@@ -9,7 +9,7 @@
       <RouterLink to="creatinas"><v-app-bar-title class="titulo2">Creatinas</v-app-bar-title></RouterLink>
     <RouterLink to="iniciasesion"> <v-app-bar-title class="titulo2">Iniciar Sesion</v-app-bar-title></RouterLink>
      <RouterLink to="registro"><v-app-bar-title class="titulo2">Registrate</v-app-bar-title></RouterLink>
-      <RouterLink to="usuario"><v-app-bar-title><v-icon color="white">mdi-account</v-icon> </v-app-bar-title></RouterLink>
+      <RouterLink to="registro"><v-app-bar-title><v-icon color="white">mdi-account</v-icon> </v-app-bar-title></RouterLink>
       <RouterLink to="carrito"><v-app-bar-title><v-icon>mdi-cart</v-icon></v-app-bar-title></RouterLink>
     </v-navigation-drawer>
   </div>

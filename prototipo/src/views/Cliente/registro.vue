@@ -18,7 +18,7 @@
           <v-text-field label="Correo Electronico"></v-text-field>
           <v-text-field label="Telefono"></v-text-field>
           <v-text-field label="Confirmar Contrasena"></v-text-field>
-          <botonreg></botonreg>
+          <botonreg @click="mostrarAlertaRegistro"></botonreg>
           <div class="mt-2">
             <h3>Tienes Cuenta?</h3>
             <RouterLink to="iniciosesion"><h3>Inicia Sesion</h3></RouterLink>
@@ -28,7 +28,13 @@
     </v-sheet>
   </div>
 </template>
-
+<script setup>
+import botonreg from '@/components/botonregis.vue'
+const mostrarAlertaRegistro = () => {
+ 
+  window.alert('¡Usuario registrado exitosamente!');
+};
+</script>
 <style scoped>
 /* ... */
 .flex-row {

@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid>
+  <v-container fluid class="text-center">
     <v-card>
-      <v-card-title>Productos en la Orden</v-card-title>
+      <h2>Productos en la Orden</h2>
       <v-card-text>
         <v-simple-table class="align-center">
           <template v-slot:default>
@@ -28,11 +28,12 @@
                   <v-icon @click="removerProducto(index)">mdi-delete</v-icon>
                 </td>
               </tr>
-              <h2>Total:{{ totalPrecio }} </h2>
-              <h2>Cantidad de Productos:{{ countedProducts }}</h2>
+              <h3>Total:{{ totalPrecio }} </h3>
+              <h3>Cantidad de Productos:{{ totalProductos }}</h3>
             </tbody>
           </template>
         </v-simple-table>
+        <v-row class="text-center">
         <v-row class="mt-4">
           <v-col cols="12" sm="6">
             <v-btn color="red" block @click="limpiarCarrito">Limpiar Carrito</v-btn>
@@ -40,7 +41,7 @@
           <v-col cols="12" sm="6">
             <v-btn color="grey-darken-4" block @click="irADireccionEntrega">Siguiente</v-btn>
           </v-col>
-        </v-row>
+        </v-row></v-row>
       </v-card-text>
     </v-card>
   </v-container>
