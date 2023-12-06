@@ -16,6 +16,7 @@
         <div class="text-subtitle-1 text-medium-emphasis">Cuenta</div>
   
         <v-text-field
+          :rules="rules_usuario"
           density="compact"
           placeholder="Correo Electronico"
           prepend-inner-icon="mdi-email-outline"
@@ -37,6 +38,7 @@
         <v-text-field
           :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
           :type="visible ? 'text' : 'password'"
+          :rules="rules_contraseña"
           density="compact"
           placeholder="Introduce tu Contrasena"
           prepend-inner-icon="mdi-lock-outline"
@@ -73,9 +75,24 @@
 
 </style>
   <script>
-    export default {
-      data: () => ({
-        visible: false,
-      }),
-    }
+ export default {
+    data: () => ({
+      firstName: '',
+      rules_usuario:[
+        value => {
+        let resul = value.indexOf("@");
+        if(resul == -1){
+          return 'dale loco'
+        }
+        }
+      ],
+      rules_contraseña: [
+        value => {
+          if (value) return true
+
+          return 'No Hay contraseñas vacias.'
+        },
+      ],
+    }),
+  }
   </script>
