@@ -82,7 +82,7 @@
         value => {
         let resul = value.indexOf("@");
         if(resul == -1){
-          return 'dale loco'
+          return 'El correo debe tener un arroba'
         }
         }
       ],
