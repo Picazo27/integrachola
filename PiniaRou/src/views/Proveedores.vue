@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios';
   export default {
     data: () => ({
       dialog: false,
@@ -50,10 +51,13 @@
     },
 
     methods: {
-      initialize () {
-        this.desserts = [
-          
-        ]
+     async initialize () {
+      try {
+      const response = await axios.get('http://localhost/mostrarproveedor');
+      this.desserts = response.data; 
+    } catch (error) {
+      console.error('Error al cargar datos desde la API', error);
+    }
       },
 
       editItem (item) {
