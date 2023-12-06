@@ -233,6 +233,7 @@ const agregarAlCarrito = (nombreProducto) => {
   const productoEncontrado = products.value.find((producto) => producto.nombre === nombreProducto);
   if (productoEncontrado) {
     cartStore.addItems(1, productoEncontrado);
+    window.alert('¡Has agregado ' + nombreProducto + ' a tu carrito!');
   }
 };
 </script>
