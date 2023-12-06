@@ -1,7 +1,7 @@
 <template>
     <v-app id="inspire">
-      
-      <v-navigation-drawer id="menubar" v-model="drawer" permanent="$vuetify.breakpoint.mdAndUp" class="hidden-lg-and-up">
+      <div class="menula">
+      <v-navigation-drawer id="menubar" v-model="drawer" permanent="$vuetify.breakpoint.mdAndUp" class="hideen-lg-and-up" >
         <v-icon img src="../img/logopicazo.png"></v-icon>
        <RouterLink to="productos"> <v-app-bar-title class="titulo2">Promociones</v-app-bar-title></RouterLink>
       <RouterLink to="productos"><v-app-bar-title class="titulo2">Suplementos</v-app-bar-title></RouterLink>
@@ -12,11 +12,10 @@
       <RouterLink to="usuario"><v-app-bar-title><v-icon color="white">mdi-account</v-icon> </v-app-bar-title></RouterLink>
       <RouterLink to="carrito"><v-app-bar-title><v-icon>mdi-cart</v-icon></v-app-bar-title></RouterLink>
     </v-navigation-drawer>
- 
-   
+  </div>
     <v-app-bar class="d-flex flex-sm-row flex-md-row justify-center hidden-md-and-up" color="grey-darken-4" id="barra">
 
-<v-app-bar-nav-icon @click="drawer = !drawer" color="white" class="hidden-lg-and-up">
+<v-app-bar-nav-icon @click.stop="drawer = !drawer" permanent="!$vuetify.breakpoint.mdAndUp" color="white" class="hidden-lg-and-up">
 </v-app-bar-nav-icon>
 
 <v-icon img src="../img/logopicazo.png"></v-icon>
@@ -69,6 +68,7 @@
       color: aliceblue;
       
     }
+    
     .logo{
       width: 25px;
       height: 25px;
@@ -98,5 +98,5 @@
     import { RouterLink, RouterView } from 'vue-router' 
     import buscador from '@/components/buscador.vue'
     //import principal from '@/views/Cliente/principal.vue'
-      const drawer = ref(null)
+      const drawer = ref(false)
     </script>
