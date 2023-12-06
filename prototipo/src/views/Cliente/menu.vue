@@ -37,8 +37,9 @@
       </span>
     </v-app-bar>
     <carrusel></carrusel>
-    <principal></principal>
     <RouterView></RouterView>
+  
+
     <final></final>
 
     </v-app>
@@ -97,6 +98,7 @@
     import final from '@/views/Cliente/footer.vue'
     import { RouterLink, RouterView } from 'vue-router' 
     import buscador from '@/components/buscador.vue'
+    import admin from '@/views/Administrador/cateGo.vue'
     //import principal from '@/views/Cliente/principal.vue'
       const drawer = ref(null)
     </script>
