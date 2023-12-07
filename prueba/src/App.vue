@@ -10,7 +10,7 @@
    <v-row-text class="my-4">NOMBRE DEL ADMIN</v-row-text>
  </v-row>
  <v-divider></v-divider>
- <v-list>
+ <v-list class="custom-list">
   <v-list-item>
     <label>Administracion</label>
   </v-list-item>
@@ -135,5 +135,13 @@
   text-align: center;
 }
 
+
+</style>
+
+<style scoped>
+
+.custom-list:hover{
+  background-color: #e0e0e0;
+}
 
 </style>
