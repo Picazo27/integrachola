@@ -12,7 +12,7 @@
  <v-divider></v-divider>
  <v-list class="custom-list">
   <v-list-item>
-    <label>Administracion</label>
+    Administracion
   </v-list-item>
   <v-divider></v-divider>
   <v-list-item>
@@ -47,10 +47,11 @@
     <label>Categorias</label>
   </v-list-item>
   <v-divider></v-divider>
-  <v-list-item>
-    <v-btn @click="funcion" style="background-color: black; color: white; margin-top: 14px;">CERRAR SESION </v-btn>
-  </v-list-item>
  </v-list>
+ <v-row style="justify-content: center; margin-top: 10px;">
+  <v-btn @click="funcion" style="background-color: black; color: white; margin-top: 14px;">CERRAR SESION </v-btn>
+
+ </v-row>
      </v-container>
     </v-navigation-drawer>
 
@@ -133,15 +134,21 @@
 
 .v-list-item{
   text-align: center;
+
 }
+
 
 
 </style>
 
 <style scoped>
 
-.custom-list:hover{
-  background-color: #e0e0e0;
+.v-list-item:hover {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro al pasar el cursor */
+  cursor: pointer; /* Cambia el cursor al estilo de un puntero */
+  color: rgb(255, 255, 255); 
 }
 
 </style>
+
+
