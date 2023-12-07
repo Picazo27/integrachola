@@ -84,6 +84,11 @@ const routes = [
         path:'Tablas_cliente',
         name:'Tablas_cliente',
         component:()=> import('../views/Empleado/TablasCliente.vue')
+      },
+      {
+path:'Productos_lista',
+name:'Lista',
+component:()=> import('../views/Cliente/Carrito/Productos_lista.vue')
       }
       
       
