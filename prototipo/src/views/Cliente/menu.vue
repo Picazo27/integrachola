@@ -7,6 +7,8 @@
       <RouterLink to="productos"><v-app-bar-title class="titulo2">Suplementos</v-app-bar-title></RouterLink>
       <RouterLink to="proteinas"><v-app-bar-title class="titulo2">Proteinas</v-app-bar-title></RouterLink>
       <RouterLink to="creatinas"><v-app-bar-title class="titulo2">Creatinas</v-app-bar-title></RouterLink>
+      <RouterLink to="aminoacidos"><v-app-bar-title class="titulo2">Aminoacidos</v-app-bar-title></RouterLink>
+      <RouterLink to="preentreno"><v-app-bar-title class="titulo2">Pre-Entreno</v-app-bar-title></RouterLink>
     <RouterLink to="iniciasesion"> <v-app-bar-title class="titulo2">Iniciar Sesion</v-app-bar-title></RouterLink>
      <RouterLink to="registro"><v-app-bar-title class="titulo2">Registrate</v-app-bar-title></RouterLink>
       <RouterLink to="registro"><v-app-bar-title><v-icon color="white">mdi-account</v-icon> </v-app-bar-title></RouterLink>
@@ -23,6 +25,8 @@
 <RouterLink to="productos" class="nav-link hidden-sm-and-down"><v-app-bar-title class="titulo">Suplementos</v-app-bar-title></RouterLink>
 <RouterLink to="proteinas" class="nav-link hidden-sm-and-down"><v-app-bar-title class="titulo">Proteinas</v-app-bar-title></RouterLink>
 <RouterLink to="creatinas" class="nav-link hidden-sm-and-down"><v-app-bar-title class="titulo">Creatinas</v-app-bar-title></RouterLink>
+<RouterLink to="aminoacidos" class="nav-link hidden-sm-and-down"><v-app-bar-title class="titulo2">Aminoacidos</v-app-bar-title></RouterLink>
+<RouterLink to="preentreno" class="nav-link hidden-sm-and-down"><v-app-bar-title class="titulo2">Pre-entreno</v-app-bar-title></RouterLink>
 
 <v-app-bar-title class="hidden-sm-and-down"><buscador></buscador></v-app-bar-title>
 
@@ -38,6 +42,7 @@
     <carrusel></carrusel>
     <principal></principal>
     <RouterView></RouterView>
+    <admin></admin>
     <final></final>
 
     </v-app>
@@ -57,10 +62,10 @@
     }
     .titulo2{
       color:aliceblue;
-      margin: 35px;
+      margin: 0px;
     }
     .nav-link {
-  margin: 100px;
+  margin: 80px;
    
 }
     #menubar{
@@ -97,6 +102,6 @@
     import final from '@/views/Cliente/footer.vue'
     import { RouterLink, RouterView } from 'vue-router' 
     import buscador from '@/components/buscador.vue'
-    //import principal from '@/views/Cliente/principal.vue'
+    import admin from '@/views/Administrador/RegistroProducto.vue'
       const drawer = ref(false)
     </script>
