@@ -21,7 +21,7 @@
                 </td>
                 <td>{{ producto.nombre }}</td>
                 <td>
-                  <v-text-field type="number" v-model="producto.cantidad" @input="actualizarCantidad(index, producto.cantidad)"></v-text-field>
+                  <input type="number" v-model="producto.cantidad" @input="actualizarCantidad(index, producto.cantidad)">
                 </td>
                 <td>{{ producto.precio }}</td>
                 <td>
