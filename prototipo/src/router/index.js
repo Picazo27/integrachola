@@ -18,7 +18,7 @@ const routes = [
       
       {
         path: 'suplementos',
-        component: () => import('../views/Cliente/productos.vue'),
+        component: () => import('../views/Cliente/Carrito/totales.vue'),
       },
       {
         path: 'proteinas',

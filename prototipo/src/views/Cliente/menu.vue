@@ -4,7 +4,7 @@
       <v-navigation-drawer id="menubar" v-model="drawer" permanent="$vuetify.breakpoint.mdAndUp" class="hideen-lg-and-up" >
         <v-icon img src="../img/logopicazo.png"></v-icon>
        <RouterLink to="productos"> <v-app-bar-title class="titulo2">Promociones</v-app-bar-title></RouterLink>
-      <RouterLink to="productos"><v-app-bar-title class="titulo2">Suplementos</v-app-bar-title></RouterLink>
+      <RouterLink to="suplementos"><v-app-bar-title class="titulo2">Suplementos</v-app-bar-title></RouterLink>
       <RouterLink to="proteinas"><v-app-bar-title class="titulo2">Proteinas</v-app-bar-title></RouterLink>
       <RouterLink to="creatinas"><v-app-bar-title class="titulo2">Creatinas</v-app-bar-title></RouterLink>
       <RouterLink to="aminoacidos"><v-app-bar-title class="titulo2">Aminoacidos</v-app-bar-title></RouterLink>
@@ -22,7 +22,7 @@
 
 <v-icon img src="../img/logopicazo.png"></v-icon>
 
-<RouterLink to="productos" class="nav-link hidden-sm-and-down"><v-app-bar-title class="titulo">Suplementos</v-app-bar-title></RouterLink>
+<RouterLink to="suplementos" class="nav-link hidden-sm-and-down"><v-app-bar-title class="titulo">Suplementos</v-app-bar-title></RouterLink>
 <RouterLink to="proteinas" class="nav-link hidden-sm-and-down"><v-app-bar-title class="titulo">Proteinas</v-app-bar-title></RouterLink>
 <RouterLink to="creatinas" class="nav-link hidden-sm-and-down"><v-app-bar-title class="titulo">Creatinas</v-app-bar-title></RouterLink>
 <RouterLink to="aminoacidos" class="nav-link hidden-sm-and-down"><v-app-bar-title class="titulo2">Aminoacidos</v-app-bar-title></RouterLink>
