@@ -89,7 +89,13 @@ const routes = [
 path:'Productos_lista',
 name:'Lista',
 component:()=> import('../views/Cliente/Carrito/Productos_lista.vue')
+      },
+      {
+        path:'RegistroProducto',
+        name:'registropro',
+        component:()=> import('../views/Administrador/RegistroProducto.vue')
       }
+
       
       
     ],

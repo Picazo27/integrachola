@@ -1,7 +1,7 @@
 <template>
     
-        
-        <v-select style="width: auto; height: auto;"
+      
+      <v-select style="width: auto; height: auto;"
                   class="lista" 
                   label="Select"
                   :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']">
