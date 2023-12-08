@@ -17,8 +17,8 @@
   
   <script setup >
   
-  import buscador from'./components/barraBuscador.vue'
-  import tabla from './components/tablaCliente.vue'
+  import buscador from'@/components/barraBuscador.vue'
+  import tabla from '@/components/tablaCliente.vue'
   
   </script>
   

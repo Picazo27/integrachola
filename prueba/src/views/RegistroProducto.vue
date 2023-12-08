@@ -67,8 +67,8 @@
 
 
 <script setup>
-import lista from './components/listaDesplegable.vue'
-import cartaImagen from './components/elegirImagen.vue'
+import lista from '@/components/listaDesplegable.vue'
+import cartaImagen from '@/components/elegirImagen.vue'
 </script>
 
 <style>

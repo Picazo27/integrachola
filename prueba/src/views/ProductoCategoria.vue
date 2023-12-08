@@ -55,11 +55,11 @@
     
     <script setup>
   
-    import listdown from './components/listaDesplegable.vue'
-    import barra from './components/barraBuscador.vue'
-    import anadir from './components/botonAnadir.vue'
-    import imagen from'./components/elegirImagen.vue'
-    import carta from './components/cartaDeatalle.vue'
+    import listdown from '@/components/listaDesplegable.vue'
+    import barra from '@/components/barraBuscador.vue'
+    import anadir from '@/components/botonAnadir.vue'
+    import imagen from'@/components/elegirImagen.vue'
+    import carta from '@/components/cartaDeatalle.vue'
     
     </script>
     
