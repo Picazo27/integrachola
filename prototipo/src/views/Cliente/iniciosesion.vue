@@ -1,4 +1,5 @@
 <template>
+  <v-container style="margin-top: 80px;">
     <div>
       <v-img
         class="mx-auto my-6"
@@ -68,6 +69,7 @@
       <br>
       
     </div>
+  </v-container>
   </template>
   <style>
 

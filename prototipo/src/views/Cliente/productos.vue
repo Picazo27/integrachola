@@ -1,4 +1,5 @@
 <template>
+      <carrusel></carrusel>
   <v-container>
     <h1>Productos Destacados</h1>
     <br>
@@ -191,6 +192,8 @@ import seccion from '@/components/section.vue'
 import { ref, computed } from 'vue';
 import { useCartStore } from '@/store/carritostore.js';
 import botoncart from '@/components/botonagg.vue'
+import carrusel from './carrusel.vue'
+
 const isHovered = ref(false);
 const cartStore = useCartStore();
 

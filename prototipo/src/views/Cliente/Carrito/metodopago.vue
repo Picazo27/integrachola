@@ -1,7 +1,7 @@
 <template>
-  <v-container>
+  <v-container style="margin-top: 80px;">
     <v-card>
-      <v-card-title>Confirmar Entrega</v-card-title>
+      <h1 style="margin-top: 30px;">Confirmar Entrega</h1>
       <v-card-text>
         <v-combobox
           label="Otras"

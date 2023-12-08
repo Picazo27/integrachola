@@ -1,7 +1,7 @@
 <template>
-    <v-container>
+    <v-container style="margin-top: 80px;">
       <v-card>
-        <v-card-title>Seleccionar Tipo de Entrega</v-card-title>
+        <h1  class="text-center" style="margin-top: 30px;">Seleccionar Tipo de Entrega</h1>
         <v-card-text>
           <v-radio-group v-model="tipoEntrega">
             <v-radio label="Sucursal"></v-radio>

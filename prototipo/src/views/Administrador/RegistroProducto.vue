@@ -95,6 +95,9 @@ import cartaImagen from '@/components/elegirImagen.vue'
 .v-col{
 justify-content:center;
 }
+th{
+  color:white;
+}
 
 
 

@@ -39,10 +39,7 @@
         🔥 «Adquiere los mejores suplementos deportivos con nosotros | Envíos a domicilio»
       </span>
     </v-app-bar>
-    <carrusel></carrusel>
-    <principal></principal>
     <RouterView></RouterView>
-    <admin></admin>
     <final></final>
 
     </v-app>
@@ -51,6 +48,7 @@
     *{
       font-family: Arial, Helvetica, sans-serif;
     }
+    
     @media only screen and (max-width: 600px) {
       .titulo {
         font-size: 12px;
@@ -98,10 +96,8 @@
     </style>
     <script setup>
     import { ref } from 'vue'
-    import carrusel from './carrusel.vue'
     import final from '@/views/Cliente/footer.vue'
     import { RouterLink, RouterView } from 'vue-router' 
     import buscador from '@/components/buscador.vue'
-    import admin from '@/views/Administrador/RegistroProducto.vue'
       const drawer = ref(false)
     </script>

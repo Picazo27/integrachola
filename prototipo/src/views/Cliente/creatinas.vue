@@ -1,6 +1,6 @@
 <template>
-    <v-container>
-        <h1>Creatinas</h1>
+    <v-container style="margin-top: 80px;">
+        <h1 style="margin-top: 30px;">Creatinas</h1>
         <br>
       <v-row align="center" justify="center">
         <v-col

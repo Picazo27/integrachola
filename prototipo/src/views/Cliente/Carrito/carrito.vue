@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid class="text-center">
+  <v-container fluid class="text-center" style="margin-top: 85px;">
     <v-card>
-      <h2>Productos en la Orden</h2>
+      <h2 style="margin-top: 35px;">Productos en la Orden</h2>
       <v-card-text>
         <v-simple-table class="align-center">
           <template v-slot:default>

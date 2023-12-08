@@ -1,6 +1,6 @@
 <template>
-    <v-container>
-        <h1>Proteinas</h1>
+    <v-container  style="margin-top: 80px;">
+        <h1 style="margin-top: 35px;">Proteinas</h1>
         <br>
       <v-row align="center" justify="center">
         <v-col
@@ -50,6 +50,7 @@ input{
     width: 70px;
     margin: 20px;
 }
+
 
 </style>
 <script setup>

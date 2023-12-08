@@ -1,5 +1,6 @@
 <template>
-  <h1 class="re">Registro</h1>
+  <v-container style="margin-top: 85px;">
+  <h1 class="re" style="margin-top: 25px;">Registro</h1>
   <div class="login d-flex align-center justify-center">
     <v-sheet class="mx-auto d-flex">
       <v-form class="flex-row" fast-fail @submit.prevent="">
@@ -27,6 +28,7 @@
       </v-form>
     </v-sheet>
   </div>
+</v-container>
 </template>
 <script setup>
 import botonreg from '@/components/botonregis.vue'
