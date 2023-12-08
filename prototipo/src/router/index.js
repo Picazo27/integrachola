@@ -29,6 +29,14 @@ const routes = [
         component: () => import('../views/Cliente/creatinas.vue'),
       },
       {
+        path: 'aminoacidos',
+        component: () => import('../views/Cliente/aminoacidos.vue'),
+      },
+      {
+        path: 'preentreno',
+        component: () => import('../views/Cliente/preentreno.vue'),
+      },
+      {
         path: 'iniciosesion',
         component: () => import('../views/Cliente/iniciosesion.vue'),
       },

@@ -63,7 +63,7 @@
       margin: 0px;
     }
     .nav-link {
-  margin: 80px;
+  margin: 50px;
    
 }
     #menubar{
