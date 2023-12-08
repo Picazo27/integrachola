@@ -33,10 +33,12 @@
           <v-text-field label="Contacto"></v-text-field>
         </v-card-text>
         <v-card-actions>
+          <router-link to="carrito"><v-btn block class="mb-8" color="red" size="large">Regresar</v-btn></router-link>
           <router-link to="metodopago"><v-btn block
             class="mb-8"
             color="grey-darken-4"
             size="large">Siguiente</v-btn></router-link>
+            
         </v-card-actions>
       </v-card>
     </v-container>
