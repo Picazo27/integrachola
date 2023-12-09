@@ -58,7 +58,7 @@
         </v-card-text>
       </v-card>
 
-      <v-btn
+      <v-btn @click="mostrarAlertainiciarsesion"
         block
         class="mb-8"
         color="grey-darken-4"
@@ -103,4 +103,8 @@ const rules_contraseña = [
 function togglePasswordVisibility() {
   visible.value = !visible.value;
 }
+const mostrarAlertainiciarsesion = () => {
+ 
+ window.alert('Listo, Haz iniciado Sesion');
+};
 </script>

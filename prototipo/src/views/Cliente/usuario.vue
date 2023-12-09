@@ -1,16 +1,16 @@
 <template>
+  <v-container style="margin-top: 100px;">
   <v-card
     class="mx-auto"
     color="grey-lighten-3"
     max-width="800"
   >
     <v-toolbar flat color="grey-darken-4">
-      <v-btn icon="mdi-account"></v-btn>
+      <v-btn icon="mdi-account" style="margin-top: 17px;"></v-btn>
 
-      <v-toolbar-title class="font-weight-light">
+      <v-toolbar-title class="font-weight-light" style="margin-top: 30px;">
       Perfil
       </v-toolbar-title>
-
       <v-spacer></v-spacer>
 
       <v-btn
@@ -26,7 +26,7 @@
     </v-toolbar>
 <div class="usuario">
       <v-row>
-        <v-col cols="6">
+        <v-col cols="12">
         <v-card-text>
        
           <v-text-field
@@ -55,9 +55,7 @@
         label="Numero Interior o Exterior"
       ></v-text-field>
       </v-card-text>
-        </v-col>
         
-        <v-col cols="6">
           <v-card-text>
           <v-autocomplete
         :disabled="!isEditing"
@@ -124,6 +122,7 @@
      Tu perfil se ha actualizado
     </v-snackbar>
   </v-card>
+</v-container>
 </template>
 <style>
 .usuario{

@@ -3,8 +3,9 @@
     class="mx-auto"
     color="grey-darken-4"
     max-width="300"
+    
   >
-    <v-card-text>
+    <v-card-text class="search-field">
       <v-text-field
         :loading="loading"
         dense
@@ -36,7 +37,11 @@ const onClick = () => {
 
 <style scoped>
 .v-text-field--solo .v-input__control {
-  height: 30px;
+  height: 20px;
   font-size: 14px;
+margin: 0px;
+}
+.search-field{
+  margin-top: 25px;
 }
 </style>
