@@ -22,7 +22,7 @@
 </v-app-bar-nav-icon>
 
 <v-icon img src="../img/logopicazo.png"></v-icon>
-
+<RouterLink to="productos" class="nav-link hidden-sm-and-down"><v-app-bar-title class="titulo">Principal</v-app-bar-title></RouterLink>
 <RouterLink to="suplementos" class="nav-link hidden-sm-and-down"><v-app-bar-title class="titulo">Suplementos</v-app-bar-title></RouterLink>
 <RouterLink to="proteinas" class="nav-link hidden-sm-and-down"><v-app-bar-title class="titulo">Proteinas</v-app-bar-title></RouterLink>
 <RouterLink to="creatinas" class="nav-link hidden-sm-and-down"><v-app-bar-title class="titulo">Creatinas</v-app-bar-title></RouterLink>
@@ -64,7 +64,7 @@
       margin-bottom: 25px;
     }
     .nav-link {
-  margin: 50px;
+  margin: 35px;
    
 }
     #menubar{
