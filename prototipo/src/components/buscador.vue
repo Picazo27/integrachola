@@ -42,6 +42,6 @@ const onClick = () => {
 margin: 0px;
 }
 .search-field{
-  margin-top: 25px;
+  margin-top: 15px;
 }
 </style>
