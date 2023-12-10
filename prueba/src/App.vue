@@ -4,83 +4,62 @@
       <!--  -->
      
      <v-container class="op-admin" >
-      <v-row >
-        <v-col>
+      
  <v-row class="icono">
     <v-icon size="100px" > mdi-account-circle</v-icon>
    <v-row-text class="my-4">NOMBRE DEL ADMIN</v-row-text>
  </v-row>
- <v-text-space></v-text-space>
- <v-row>
-  <router-link to="/administracion"><v-card-text >Adminsitracion</v-card-text></router-link>
- </v-row>
- <v-row>
-  <router-link to="/ejemplo"><v-card-text>Clientes </v-card-text></router-link>
- </v-row>
- <v-row>
-  <v-card-text>Empleados</v-card-text>
- </v-row>
- <v-row>
-  <v-card-text>Provedores</v-card-text>
- </v-row>
- <v-row>
-  <v-card-text>Productos</v-card-text>
- </v-row>
- <v-row>
-  <v-card-text>Inventarios</v-card-text>
- </v-row>
- <v-row>
-  <v-card-text>Entradas</v-card-text>
- </v-row>
- <v-row>
-  <v-card-text>Salidas</v-card-text>
- </v-row>
- <v-row>
-  <v-card-text>Categorias</v-card-text>
- </v-row>
- <v-row justify="center" aligin="center">
-  <v-btn color="black" >CERRAR SESION</v-btn>
- </v-row>
-        </v-col>
-      </v-row>
+ <v-divider></v-divider>
+ <v-list class="custom-list">
+  <v-list-item>
+    <label>Administracion</label>
+  </v-list-item>
+  <v-divider></v-divider>
+  <v-list-item>
+    <label>Clientes</label>
+  </v-list-item>
+  <v-divider></v-divider>
+  <v-list-item>
+    <label>Empleados</label>
+  </v-list-item>
+  <v-divider></v-divider>
+  <v-list-item>
+    <label>Proveedores</label>
+  </v-list-item>
+  <v-divider></v-divider>
+  <v-list-item>
+    <label>Productos</label>
+  </v-list-item>
+  <v-divider></v-divider>
+  <v-list-item>
+    <label>Inventario</label>
+  </v-list-item>
+  <v-divider></v-divider>
+  <v-list-item>
+    <label>Entradas</label>
+  </v-list-item>
+  <v-divider></v-divider>
+  <v-list-item>
+    <label>Salidas</label>
+  </v-list-item>
+  <v-divider></v-divider>
+  <v-list-item>
+    <label>Categorias</label>
+  </v-list-item>
+  <v-divider></v-divider>
+  <v-list-item>
+    <v-btn @click="funcion" style="background-color: black; color: white; margin-top: 14px;">CERRAR SESION </v-btn>
+  </v-list-item>
+ </v-list>
      </v-container>
-  
     </v-navigation-drawer>
 
     <v-app-bar>
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
-      <v-app-bar-title>Adminstracion</v-app-bar-title>
-    </v-app-bar>
-    <v-main>
       
 
-     <v-row>
-      <v-col>
-        <v-select class="lista"
-  
-  label="Select"
-  :items="['Clientes', 'Empleados', 'Provedores', 'Productos', 'Inventario', 'Entradas','Salidas','Categorias']"
-></v-select>
-
-      </v-col>
-     </v-row>
-   
-
-     <v-row class="py-8">
-      <v-img src="https://lh4.googleusercontent.com/eKgfVlAQwf5x8pAp8YJsnvbm8siycLuuPyRj3fsCLYmogQCNCTT0iHG3q8Gek2HMO2SdpxGR63NQs30gpBDndUhLp6r5OU2vgLxGtuP0z-dVTAElyg_G7ksJO4HY_3bQMuJ1Mzgkc7PKkejoVDNDe-pRZQPaQZV5KyRQE8Hof7mlrSCGUe0CH-aH_Mfz"
-       width="470px"
-       height="470px"></v-img>
-     </v-row>
-
-<v-row  class="py-8"></v-row>
-     <v-row>
-      <v-img src="https://tudashboard.com/wp-content/uploads/2021/03/grafica-de-linea.png" 
-       width="470px"
-       height="470px"></v-img>
-     </v-row>
-
-    </v-main>
+    <v-app-bar-title>Adminstracion</v-app-bar-title>
+    </v-app-bar>
+    
   </v-app>
 </template>
 
@@ -148,6 +127,21 @@
   margin-left: 100px;
 }
 
+.v-divider{
+  border-top: 6px solid #000;
+}
 
+.v-list-item{
+  text-align: center;
+}
+
+
+</style>
+
+<style scoped>
+
+.custom-list:hover{
+  background-color: #e0e0e0;
+}
 
 </style>
