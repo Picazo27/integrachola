@@ -1,18 +1,18 @@
 <template>
     <v-container>  
-      <v-combobox v-model="Suplementos"
-              label="Suplementos"
-              :items="['Proteina','Creatina','Proteina en Polvo','Pre-entreno','Aminoacidos']"
-              variant="outlined"
-              style="width: 300px;
-              align
-              "
-              ></v-combobox>
+    <v-combobox v-model="Suplementos"
+            label="Suplementos"
+            :items="['Proteina','Creatina','Proteina en Polvo','Pre-entreno','Aminoacidos','Suplementos']"
+            variant="outlined"
+            style="width: 300px;
+            align
+            "
+            ></v-combobox>
         <h1>Suplementos</h1>
         <br> 
-        <v-container v-if="Suplementos===''">
+        <v-container v-if="Suplementos===''|| Suplementos==='Suplementos'">
         <v-container >
-          <v-row align="center" justify="center">
+        <v-row align="center" justify="center">
         <v-col 
         v-for="(variant, i) in variants"
         :key="i"
@@ -44,7 +44,7 @@
     <v-container>
         <br>
     <v-row align="center" justify="center">
-        <v-col v-if="Suplementos===''"
+        <v-col v-if="Suplementos===''|| Suplementos==='Suplementos'"
         v-for="(variant, i) in variants"
         :key="i"
         cols="auto"
@@ -75,7 +75,7 @@
     <v-container>
         <br>
     <v-row align="center" justify="center">
-        <v-col v-if="Suplementos===''"
+        <v-col v-if="Suplementos===''|| Suplementos==='Suplementos'"
         v-for="(variant, i) in variants"
         :key="i"
         cols="auto"
@@ -106,7 +106,7 @@
     <v-container>
         <br>
     <v-row align="center" justify="center">
-        <v-col v-if="Suplementos===''"
+        <v-col v-if="Suplementos===''|| Suplementos==='Suplementos'"
         v-for="(variant, i) in variants"
         :key="i"
         cols="auto"
@@ -137,7 +137,7 @@
     <v-container>
         <br>
     <v-row align="center" justify="center">
-        <v-col v-if="Suplementos===''"
+        <v-col v-if="Suplementos===''|| Suplementos==='Suplementos'"
         v-for="(variant, i) in variants"
         :key="i"
         cols="auto"
