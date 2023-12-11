@@ -79,4 +79,13 @@ const irADireccionEntrega = () => {
 th{
   padding-left: 10px;
 }
+@media(max-width: 600px) {
+  th, td {
+    display: block;
+    text-align: center;
+  }
+  td {
+    margin-bottom: 10px;
+  }
+}
 </style>

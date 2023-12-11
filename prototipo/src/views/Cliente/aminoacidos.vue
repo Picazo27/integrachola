@@ -21,7 +21,7 @@
                 <div class="text-h6 mb-1">
                   Aminoacidos
                 </div>
-                <div class="amino"><img src="https://www.suplementosgym.com.mx/media/catalog/product/cache/2/small_image/300x/713b5111b78bd93a4a79b9899d195c9f/o/p/optimun-amino-energy-270gr_1.jpg"></div>
+                <div class="amino"><img src="https://www.suplementosgym.com.mx/media/catalog/product/cache/2/small_image/300x/713b5111b78bd93a4a79b9899d195c9f/o/p/optimun-amino-energy-270gr_1.jpg" class="img-card"></div>
               </div>
             </v-card-item>
   

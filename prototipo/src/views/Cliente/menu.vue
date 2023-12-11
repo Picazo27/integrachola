@@ -62,6 +62,7 @@
     .titulo2{
       color:aliceblue;
       margin-bottom: 25px;
+      margin-left: 15px;
     }
     .nav-link {
   margin: 35px;

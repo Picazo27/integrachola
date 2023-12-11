@@ -10,7 +10,7 @@
         >
           <v-card
             class="mx-auto"
-            max-width="344"
+            max-width="244"
             :variant="variant"
           >
             <v-card-item>
@@ -21,7 +21,7 @@
                 <div class="text-h6 mb-1">
                   Creatina
                 </div>
-                <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBIJT-v3xDlZ41kSeOODYlte74YaN83EzDIaGSC37MRRLwdPufpYiHmiwZJrn0L8n8GpE&usqp=CAU"></div>
+                <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBIJT-v3xDlZ41kSeOODYlte74YaN83EzDIaGSC37MRRLwdPufpYiHmiwZJrn0L8n8GpE&usqp=CAU" class="img-card"></div>
               </div>
             </v-card-item>
   

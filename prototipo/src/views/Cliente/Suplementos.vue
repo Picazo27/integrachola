@@ -3,7 +3,7 @@
         <h1 style="margin-top: 30px;">Suplementos</h1>
         <v-combobox v-model="Suplementos"
               label="Suplementos"
-              :items="['Proteina','Creatina','Proteina en Polvo','Pre-entreno','Aminoacidos']"
+              :items="['Ver Destacados','Proteina','Creatina','Proteina en Polvo','Pre-entreno','Aminoacidos']"
               variant="outlined"
               style="width: 300px;
               align 
@@ -20,7 +20,7 @@
         >
         <v-card
             class="mx-auto"
-            max-width="344"
+            max-width="250"
             :variant="variant"
         >
             <v-card-item>
@@ -28,7 +28,7 @@
                 <div class="text-h6 mb-1">
                 Proteina
                 </div>
-                <div class="prote"><img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1664439072-41Veol69hzL._SL500_.jpg?crop=1xw:1xh;center,top&resize=980:*"></div>
+                <div class="prote"><img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1664439072-41Veol69hzL._SL500_.jpg?crop=1xw:1xh;center,top&resize=980:*" class="img-card"></div>
             </div>
             </v-card-item>
             <v-card-actions>
@@ -50,7 +50,7 @@
         >
         <v-card
             class="mx-auto"
-            max-width="344"
+            max-width="250"
             :variant="variant"
         >
             <v-card-item>
@@ -58,7 +58,7 @@
                 <div class="text-h6 mb-1">
                 Creatina
                 </div>
-                <div class="prote"><img src="https://proteinpalacemx.com/cdn/shop/products/META_NUTRITION_CREATINE_100_SERVICIOS_5G_proteinpalacemx_2_900x.jpg?v=1662403840"></div>
+                <div class="prote"><img src="https://proteinpalacemx.com/cdn/shop/products/META_NUTRITION_CREATINE_100_SERVICIOS_5G_proteinpalacemx_2_900x.jpg?v=1662403840" class="img-card"></div>
             </div>
             </v-card-item>
             <v-card-actions>
@@ -80,7 +80,7 @@
         >
         <v-card
             class="mx-auto"
-            max-width="344"
+            max-width="250"
             :variant="variant"
         >
             <v-card-item>
@@ -88,7 +88,7 @@
                 <div class="text-h6 mb-1">
                 Pre-Entreno
                 </div>
-                <div class="prote"><img src="https://i5.walmartimages.com.mx/mg/gm/3pp/asr/09245e09-b13a-47e9-9e69-efdfc2e5fa4d.cf0f70e63c38cdfb5a2fdf9fa7bc59c5.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff"></div>
+                <div class="prote"><img src="https://i5.walmartimages.com.mx/mg/gm/3pp/asr/09245e09-b13a-47e9-9e69-efdfc2e5fa4d.cf0f70e63c38cdfb5a2fdf9fa7bc59c5.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff" class="img-card"></div>
             </div>
             </v-card-item>
             <v-card-actions>
@@ -110,7 +110,7 @@
         >
         <v-card
             class="mx-auto"
-            max-width="344"
+            max-width="244"
             :variant="variant"
         >
             <v-card-item>
@@ -118,7 +118,7 @@
                 <div class="text-h6 mb-1">
                 Proteina En Polvo
                 </div>
-                <div class="prote"><img src="https://www.43supplements.com/wp-content/uploads/2022/09/Vainilla.jpg"></div>
+                <div class="prote"><img src="https://www.43supplements.com/wp-content/uploads/2022/09/Vainilla.jpg" class="img-card"></div>
             </div>
             </v-card-item>
             <v-card-actions>
@@ -140,7 +140,7 @@
         >
         <v-card
             class="mx-auto"
-            max-width="344"
+            max-width="244"
             :variant="variant"
         >
             <v-card-item>
@@ -148,7 +148,7 @@
                 <div class="text-h6 mb-1">
                 Aminoacidos
                 </div>
-                <div class="prote"><img src="https://i0.wp.com/www.fitstore.com.mx/wp-content/uploads/2022/01/2264us_mutant_bcaa_9.7_tropical_mango_flavor_363_g_12.8_oz_v1.00-ms-1.png?fit=500%2C600&ssl=1"></div>
+                <div class="prote"><img src="https://i0.wp.com/www.fitstore.com.mx/wp-content/uploads/2022/01/2264us_mutant_bcaa_9.7_tropical_mango_flavor_363_g_12.8_oz_v1.00-ms-1.png?fit=500%2C600&ssl=1" class="img-card"></div>
             </div>
             </v-card-item>
             
@@ -175,7 +175,7 @@
         >
         <v-card
             class="mx-auto"
-            max-width="344"
+            max-width="244"
             :variant="variant"
         >
             <v-card-item>
@@ -183,7 +183,7 @@
                 <div class="text-h6 mb-1">
                 Proteina
                 </div>
-                <div class="prote"><img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1664439072-41Veol69hzL._SL500_.jpg?crop=1xw:1xh;center,top&resize=980:*"></div>
+                <div class="prote"><img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1664439072-41Veol69hzL._SL500_.jpg?crop=1xw:1xh;center,top&resize=980:*" class="img-card"></div>
             </div>
             </v-card-item><v-card-actions>
                 <botoncart>Agregar al carrito</botoncart>
@@ -204,7 +204,7 @@
         >
         <v-card
             class="mx-auto"
-            max-width="344"
+            max-width="244"
             :variant="variant"
         >
             <v-card-item>
@@ -212,7 +212,7 @@
                 <div class="text-h6 mb-1">
                 Creatina
                 </div>
-                <div class="prote"><img src="https://proteinpalacemx.com/cdn/shop/products/META_NUTRITION_CREATINE_100_SERVICIOS_5G_proteinpalacemx_2_900x.jpg?v=1662403840"></div>
+                <div class="prote"><img src="https://proteinpalacemx.com/cdn/shop/products/META_NUTRITION_CREATINE_100_SERVICIOS_5G_proteinpalacemx_2_900x.jpg?v=1662403840" class="img-card"></div>
             </div>
             </v-card-item>
             <v-card-actions>
@@ -236,7 +236,7 @@
         >
         <v-card
             class="mx-auto"
-            max-width="344"
+            max-width="244"
             :variant="variant"
         >
             <v-card-item>
@@ -244,7 +244,7 @@
                 <div class="text-h6 mb-1">
                 Pre-Entreno
                 </div>
-                <div class="prote"><img src="https://i5.walmartimages.com.mx/mg/gm/3pp/asr/09245e09-b13a-47e9-9e69-efdfc2e5fa4d.cf0f70e63c38cdfb5a2fdf9fa7bc59c5.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff"></div>
+                <div class="prote"><img src="https://i5.walmartimages.com.mx/mg/gm/3pp/asr/09245e09-b13a-47e9-9e69-efdfc2e5fa4d.cf0f70e63c38cdfb5a2fdf9fa7bc59c5.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff" class="img-card"></div>
             </div>
             </v-card-item>
             <v-card-actions>
@@ -267,7 +267,7 @@
         >
         <v-card
             class="mx-auto"
-            max-width="344"
+            max-width="244"
             :variant="variant"
         >
             <v-card-item>
@@ -275,7 +275,7 @@
                 <div class="text-h6 mb-1">
                 Proteina En Polvo
                 </div>
-                <div class="prote"><img src="https://www.43supplements.com/wp-content/uploads/2022/09/Vainilla.jpg"></div>
+                <div class="prote"><img src="https://www.43supplements.com/wp-content/uploads/2022/09/Vainilla.jpg" class="img-card"></div>
             </div>
             </v-card-item>
             <v-card-actions>
@@ -297,7 +297,7 @@
         >
         <v-card
             class="mx-auto"
-            max-width="344"
+            max-width="244"
             :variant="variant"
         >
             <v-card-item>
@@ -305,7 +305,7 @@
                 <div class="text-h6 mb-1">
                 Aminoacidos
                 </div>
-                <div class="prote"><img src="https://i0.wp.com/www.fitstore.com.mx/wp-content/uploads/2022/01/2264us_mutant_bcaa_9.7_tropical_mango_flavor_363_g_12.8_oz_v1.00-ms-1.png?fit=500%2C600&ssl=1"></div>
+                <div class="prote"><img src="https://i0.wp.com/www.fitstore.com.mx/wp-content/uploads/2022/01/2264us_mutant_bcaa_9.7_tropical_mango_flavor_363_g_12.8_oz_v1.00-ms-1.png?fit=500%2C600&ssl=1" class="img-card"></div>
             </div>
             </v-card-item>
             <v-card-actions>
@@ -315,6 +315,24 @@
         </v-card>
         </v-col>
     </v-row><br>
+    </v-container>
+    <v-container v-if="Suplementos === 'Ver Destacados' || Suplementos === ''">
+      <v-row align="center" justify="center">
+        <v-col v-for="(product, index) in products" :key="index" cols="auto">
+          <v-card class="mx-auto" max-width="244" :variant="product.variant">
+            <v-card-item>
+              <div>
+                <div class="text-h6 mb-1">{{ product.title }}</div>
+                <div class="prote"><img :src="product.image" class="img-card"></div>
+              </div>
+            </v-card-item>
+            <v-card-actions>
+              <botoncart>Agregar al carrito</botoncart>
+              <input type="number">
+            </v-card-actions>
+          </v-card>
+        </v-col>
+      </v-row>
     </v-container>
     
 </template>
@@ -348,6 +366,10 @@
     height: 30px;
     width: 70px;
     margin: 20px;
+  }
+  .img-card{
+    width: 250px;
+    height: 289px;
   }
 </style>
 

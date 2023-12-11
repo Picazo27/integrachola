@@ -10,7 +10,7 @@
         >
           <v-card
             class="mx-auto"
-            max-width="344"
+            max-width="244"
             :variant="variant"
           >
             <v-card-item>
@@ -21,7 +21,7 @@
                 <div class="text-h6 mb-1">
                   Proteina
                 </div>
-                <div class="prote"><img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1664439072-41Veol69hzL._SL500_.jpg?crop=1xw:1xh;center,top&resize=980:*"></div>
+                <div class="prote"><img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1664439072-41Veol69hzL._SL500_.jpg?crop=1xw:1xh;center,top&resize=980:*" class="img-card"></div>
               </div>
             </v-card-item>
   

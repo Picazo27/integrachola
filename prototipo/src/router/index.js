@@ -18,7 +18,7 @@ const routes = [
       
       {
         path: 'suplementos',
-        component: () => import('../views/Cliente/Carrito/totales.vue'),
+        component: () => import('../views/Cliente/Suplementos.vue'),
       },
       {
         path: 'proteinas',
@@ -56,7 +56,7 @@ const routes = [
       {
             path: 'direccion-entrega',
             name: 'direccion-entrega',
-            component: () => import('../views/Cliente/Carrito/dirreccion.vue'),
+            component: () => import('@/views/Cliente/Carrito/dirreccion.vue'),
       },
       {
             path: 'metodopago',
