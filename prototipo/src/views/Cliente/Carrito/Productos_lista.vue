@@ -1,14 +1,15 @@
-<template>
-    <v-container>  
-    <v-combobox v-model="Suplementos"
+<template >
+    <v-container >  
+    <v-combobox 
+    v-model="Suplementos"
             label="Suplementos"
             :items="['Proteina','Creatina','Proteina en Polvo','Pre-entreno','Aminoacidos','Suplementos']"
             variant="outlined"
             style="width: 300px;
-            align
+            
             "
             ></v-combobox>
-        <h1>Suplementos</h1>
+        <h1 >Suplementos</h1>
         <br> 
         <v-container v-if="Suplementos===''|| Suplementos==='Suplementos'">
         <v-container >
@@ -25,16 +26,16 @@
         >
             <v-card-item>
             <div>
-                <div class="text-h6 mb-1">
+                <div class="text-h6 mb-1" >
                 Proteina
                 </div>
                 <div class="prote"><img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1664439072-41Veol69hzL._SL500_.jpg?crop=1xw:1xh;center,top&resize=980:*"></div>
             </div>
             </v-card-item>
             <v-card-actions>
-            <v-btn>
+            <router-link to="Productoi" style="color: rgb(53, 53, 53);"><v-btn>
                 Agregar al Carrito
-            </v-btn> 
+            </v-btn> </router-link>
             <input type="number">
         </v-card-actions>
         </v-card>

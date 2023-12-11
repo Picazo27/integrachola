@@ -94,6 +94,11 @@ component:()=> import('../views/Cliente/Carrito/Productos_lista.vue')
         path:'RegistroProducto',
         name:'registropro',
         component:()=> import('../views/Administrador/RegistroProducto.vue')
+      },
+      {path:'Productoi',
+      name:'ProductoInformacion',
+      component:()=>import('../views/Cliente/Carrito/Producto_info.vue')
+
       }
 
       
