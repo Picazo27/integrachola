@@ -7,7 +7,7 @@
             
        <v-row class="icono">
           <v-icon size="100px" > mdi-account-circle</v-icon>
-         <v-row-text class="my-4">NOMBRE DEL ADMIN</v-row-text>
+         <v-row-text class="my-4">NOMBRE DEL EMPLEADO</v-row-text>
        </v-row>
        <v-divider></v-divider>
        <v-list class="custom-list">

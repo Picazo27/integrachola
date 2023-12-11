@@ -34,6 +34,9 @@
          </tr>
        </tbody>
      </v-table>
+     <v-row style="justify-content: end;">
+      <v-btn color="grey-darken-4" type="block" style="margin-top: 70px; ">Detalles</v-btn>
+     </v-row>
     </v-container>
     </v-app>
    </template>

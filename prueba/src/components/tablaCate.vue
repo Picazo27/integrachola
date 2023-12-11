@@ -3,12 +3,13 @@
 
     <v-table theme="dark">
         <thead>
-          <tr>
+          <tr class="text-center">
             <th class="text-center">
-                <v-select style="width: auto; height: auto;"
+                <v-select style="width:180px; height:90px;"
                   class="lista" 
+                  clearable
                   label="Select"
-                  :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']">
+                  :items="['Categoria1', 'Categoria2', 'Categoria3', 'Categoria4', 'Categoria5', 'Categoria6']">
                 </v-select>
             </th>
             <th class="text-center">
@@ -19,7 +20,8 @@
         
         <tbody>
   
-          <tr
+          <tr 
+             class="text-center"
              v-for="item in desserts"
              :key="item.name">
              <td>{{ item.Categoria }}</td>

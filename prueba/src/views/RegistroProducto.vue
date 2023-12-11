@@ -1,7 +1,7 @@
 
 
 <template>
-  <v-app>
+
     <v-container>
     <h1>Registro Producto</h1>
       <v-table theme="dark"  >
@@ -62,7 +62,6 @@
   </v-row>
 
     </v-container>
-  </v-app>
 </template>
 
 

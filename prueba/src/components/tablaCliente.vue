@@ -31,7 +31,7 @@
            <td>{{ item.Direccion }}</td>
            <td>{{ item.Correo }}</td>
           <td><v-btn color="grey-darken-4" type="block">Detalles</v-btn></td> 
-         </tr>s
+         </tr>
        </tbody>
      </v-table>
  

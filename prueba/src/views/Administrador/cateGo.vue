@@ -22,7 +22,7 @@
     
     <script setup>
    
-    import tabla from './components/tablaCate.vue'
+    import tabla from '@/components/tablaCate.vue'
   
     </script>
   
