@@ -4,19 +4,18 @@
     <br>
     <v-row align="center" justify="center">
       <v-col
-  v-for="(product, index) in products"
-  :key="index"
+  v-for="product in products"
+  :key="product.id"
   cols="auto"
 
 >
   <v-card
     class="mx-auto"
     max-width="250"
-    :variant="product.variant"
   > <v-card-item>
             <div>
               <div class="text-h6 mb-1 text-center">
-                {{ product.nombre }}
+                {{ product.nombre_producto }}
               </div>
               <div class="producto"><img :src="product.imagen"  style="width: 100%; height: 100%;" :aspect-ratio="1"></div>
               <div class="text-h6 mb-1 text-center red">
@@ -25,7 +24,7 @@
             </div>
           </v-card-item>
           <v-card-actions>
-            <botoncart @click="agregarAlCarrito(product.nombre)"></botoncart>
+            <botoncart @click="agregarAlCarrito(product.nombre_producto)"></botoncart>
             <input type="number">
           </v-card-actions>
         </v-card>
@@ -186,9 +185,10 @@
 
 <script setup>
 import seccion from '@/components/section.vue'
-import { ref, computed } from 'vue';
+import { onMounted, ref, computed } from 'vue';
 import { useCartStore } from '@/store/carritostore.js';
 import botoncart from '@/components/botonagg.vue'
+import axios from 'axios';
 const isHovered = ref(false);
 const cartStore = useCartStore();
 
@@ -201,34 +201,20 @@ const textColor = computed(() => {
   return isHovered.value ? 'white' : '';
 });
 
-const products = ref([
-  {
-    variant: 'outlined',
-    nombre: 'Creatina',
-    imagen: 'https://proteinpalacemx.com/cdn/shop/products/META_NUTRITION_CREATINE_100_SERVICIOS_5G_proteinpalacemx_2_900x.jpg?v=1662403840',
-    precio:100,
+const products = ref([]);
+onMounted (async()=>
+{
+  try{
+    const responseproductos = await axios.get(
+      "http://localhost/mostrar"
+    );
+    products.value = responseproductos.data.data;
+    console.log("Productos:",products.value);
+  }catch(error){
+    console.error("Error fetching product:",error);
+  }
+});
 
-  },
-  {
-      variant: 'outlined',
-      nombre: 'Proteína en Polvo',
-      imagen: 'https://www.43supplements.com/wp-content/uploads/2022/09/Vainilla.jpg',
-      precio:200,
-    },
-    {
-      variant:'outlined',
-      nombre: 'Pre entreno',
-      imagen: 'https://i5.walmartimages.com.mx/mg/gm/3pp/asr/09245e09-b13a-47e9-9e69-efdfc2e5fa4d.cf0f70e63c38cdfb5a2fdf9fa7bc59c5.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff',
-      precio:340,
-    },
-    {
-      variant:'outlined',
-      nombre:'Aminoacidos',
-      imagen: 'https://i0.wp.com/www.fitstore.com.mx/wp-content/uploads/2022/01/2264us_mutant_bcaa_9.7_tropical_mango_flavor_363_g_12.8_oz_v1.00-ms-1.png?fit=500%2C600&ssl=1',
-      precio:350,
-    },
-   
-]);
 const agregarAlCarrito = (nombreProducto) => {
   const productoEncontrado = products.value.find((producto) => producto.nombre === nombreProducto);
   if (productoEncontrado) {
