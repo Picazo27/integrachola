@@ -59,6 +59,22 @@ export const useCartStore = defineStore('CartStore', {
       this.clearItem(producto.nombre);
       this.addItems(count, producto);
     },
+    async fetchAndAddProductsFromAPI() {
+      try {
+        const response = await axios.get('http://tu-api.com/productos'); // Cambia la URL a tu endpoint de productos
+        const productsFromAPI = response.data; // Supongamos que la respuesta es un array de productos
+
+        // Agregar los productos obtenidos al carrito utilizando el método existente addItems
+        productsFromAPI.forEach((product) => {
+          this.addItems(1, product); // Agregar 1 unidad de cada producto al carrito
+        });
+
+        // Podrías hacer más cosas aquí, como actualizar el estado o notificar al usuario
+      } catch (error) {
+        console.error('Error al obtener productos desde la API:', error);
+      }
+    
+  },
     
   },
 });

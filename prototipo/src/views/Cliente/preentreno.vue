@@ -1,32 +1,35 @@
 <template>
   <v-container style="margin-top: 80px;">
-    <h1 style="margin-top: 35px;">Pre-Entrenos</h1>
+    <h1 style="margin-top: 35px;">Pre-Entreno</h1>
     <br>
     <v-row align="center" justify="center">
       <v-col
-        v-for="(product, i) in proteins"
-        :key="i"
+        v-for="(item, index) in items"
+        :key="index"
         cols="auto"
       >
         <v-card
           class="mx-auto"
-          max-width="244"
+          max-width="344"
+          :variant="item.variant"
         >
           <v-card-item>
             <div>
               <div class="text-overline mb-1">
-                {{ product.name }} <!-- Reemplaza con el campo correspondiente -->
+                {{ item.variant }}
               </div>
               <div class="text-h6 mb-1">
-                Pre-entreno
+                Pre-Entrenamiento
               </div>
-              <div class="amino"><img :src="product.image" class="img-card"></div> <!-- Reemplaza con el campo correspondiente -->
+              <div class="pre-entrenamiento">
+                <img :src="item.image" class="img-card" :alt="item.name">
+              </div>
             </div>
           </v-card-item>
 
           <v-card-actions>
-            <button @click="addToCart(product)">Agregar Carrito</button>
-            <input type="number">
+            <boton @click="addToCart(item)">Agregar Carrito</boton>
+            <input type="number" v-model="item.quantity">
           </v-card-actions>
         </v-card>
       </v-col>
@@ -35,37 +38,37 @@
 </template>
 
 <style>
-img{
-    height: 350px;
-    width: 350px;
-}
-h1{
-    text-align: center;
-}
-input{
-    height: 30px;
-    width: 70px;
-    margin: 20px;
-}
+/* ... tu estilo existente ... */
 </style>
 
 <script setup>
-import { ref, onMounted } from 'vue';
 import axios from 'axios';
+import boton from '@/components/botonagg.vue';
+import { ref, onMounted } from 'vue';
+const items = ref([]);
+import { useProductStore } from '@/store/productosstore.js';
 
-const proteins = ref([]);
+const productStore = useProductStore();
 
-const addToCart = (product) => {
-  // Lógica para agregar al carrito
-  console.log('Agregado al carrito:', product);
+onMounted(() => {
+  productStore.fetchProducts();
+});
+
+const fetchData = async () => {
+  try {
+    const response = await axios.get('http://localhost/pre-entrenos'); // Actualiza con tu ruta
+    items.value = response.data; // Asume que recibes un array de objetos con datos de pre-entrenamientos
+  } catch (error) {
+    console.error('Error al obtener datos:', error);
+  }
 };
 
-onMounted(async () => {
-  try {
-    const response = await axios.get('http://localhost/mostrar');
-    proteins.value = response.data; // Ajusta esto según la estructura de tus datos
-  } catch (error) {
-    console.error('Error fetching proteins:', error);
-  }
+const addToCart = (selectedItem) => {
+  // Aquí puedes implementar la lógica para agregar al carrito con el item seleccionado
+  console.log('Agregado al carrito:', selectedItem);
+};
+
+onMounted(() => {
+  fetchData(); // Llama a la función fetchData al montar el componente
 });
 </script>

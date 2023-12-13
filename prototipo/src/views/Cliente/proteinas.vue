@@ -54,11 +54,18 @@ import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
 const proteins = ref([]);
+import { useProductStore } from '@/store/productosstore.js';
 
 const addToCart = (product) => {
   // Lógica para agregar al carrito
   console.log('Agregado al carrito:', product);
 };
+
+const productStore = useProductStore();
+
+onMounted(() => {
+  productStore.fetchProducts();
+});
 
 onMounted(async () => {
   try {

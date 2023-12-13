@@ -57,6 +57,13 @@
   import axios from 'axios';
 
   const creatinas = ref([]);
+  import { useProductStore } from '@/store/productosstore.js';
+
+const productStore = useProductStore();
+
+onMounted(() => {
+  productStore.fetchProducts();
+});
 
   const addToCart = (product) => {
     // Lógica para agregar al carrito
@@ -65,7 +72,7 @@
 
   onMounted(async () => {
     try {
-      const response = await axios.get('http://localhost/mostrar_creatinas'); // Reemplaza con tu ruta real
+      const response = await axios.get('http://localhost/creatina'); // Reemplaza con tu ruta real
       creatinas.value = response.data.data; // Ajusta esto según la estructura de tus datos
     } catch (error) {
       console.error('Error fetching creatinas:', error);
