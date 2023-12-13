@@ -14,8 +14,6 @@
             <li>Óxido Nítrico</li>
             <li>Aminoácidos</li>
             <li>BCAA</li>
-            <li>Quemadores de Grasa</li>
-            <li>Ganadores de Masa</li>
           </ul>
         </v-col>
         <v-col cols="12" md="4">
