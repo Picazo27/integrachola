@@ -15,11 +15,11 @@
     </v-row>
     
     <v-row>
-        <v-table fixed-header density="compact" style="margin: 200px; margin-top: 50px; width: 100%;">
+        <v-table  style="margin: 200px; margin-top: 50px; width: 100%;">
        <thead>
          <tr>
            
-           <th class="text-left">
+           <th class="text-left" style="align-items: center; align-content:center; justify-content:center; justify-items: center;">
              Nombre 
            </th>
            
@@ -32,9 +32,9 @@
            
          >
            
-           <td>{{ item.Nombre }}
-            <v-btn style="margin-left: 480px; color: white; background-color: black;">Ver detalles</v-btn>
-            <v-icon style="margin-left: 25px;">mdi-delete</v-icon>
+           <td style="justify-items: center; align-content: center; align-items: center; justify-items: center;">{{ item.Nombre }}
+            <v-btn style="margin-left: 450px; color: white; background-color: black;">Ver detalles</v-btn>
+            <v-icon style="margin-left: 10px;">mdi-delete</v-icon>
         </td>
            
          

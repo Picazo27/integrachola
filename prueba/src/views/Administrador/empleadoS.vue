@@ -1,7 +1,7 @@
 <template>
    <v-app>
     <v-conatiner>
-        <h1 style="margin-top: 12px; margin-bottom: 18px; margin-left: 45px;">Empleados</h1>
+        <h1 style=" margin-bottom: 18px; margin-left: 45px;">Empleados</h1>
 
 <v-row><boton style="margin-top: 30px; justify-content: end; margin-right: 120px;"></boton></v-row>
 <v-row>

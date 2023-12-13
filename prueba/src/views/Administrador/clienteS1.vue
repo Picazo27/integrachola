@@ -1,7 +1,9 @@
 <template>
-    <v-app  class="tabla" style="margin: 200px; margin-top: 50px;" >
+    <v-app  class="tabla" style="margin: 200px; margin-top:50px; " >
     <v-container>
-     <v-table fixed-header density="compact">
+     <v-row> <h1 style="margin-bottom: 25px; margin-right: 200px;">Clientes</h1></v-row>
+    <v-row style="justify-content: center;">
+      <v-table fixed-header density="compact">
        <thead>
          <tr>
            <th class="text-left">
@@ -34,8 +36,10 @@
          </tr>
        </tbody>
      </v-table>
+    </v-row>
+
      <v-row style="justify-content: end;">
-      <v-btn color="grey-darken-4" type="block" style="margin-top: 70px; ">Detalles</v-btn>
+      <v-btn color="grey-darken-4" type="block" style="margin-top: 50px; ">Detalles</v-btn>
      </v-row>
     </v-container>
     </v-app>
