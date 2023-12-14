@@ -11,11 +11,11 @@
                 <th>Nombre del Producto</th>
                 <th>Cantidad</th>
                 <th>Precio</th>
-                <th>Remover</th>
+                <th>Eliminar</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(producto, index) in productos" :key="index">
+              <tr v-for="(producto, index) in listaProductos" :key="index">
                 <td>
                   <v-img :src="producto.imagen" alt="Imagen del Producto" width="150" height="150"></v-img>
                 </td>
@@ -25,49 +25,51 @@
                 </td>
                 <td>{{ producto.precio }}</td>
                 <td>
-                  <v-icon @click="removerProducto(index)">mdi-delete</v-icon>
+                  <v-icon @click="eliminarProducto(index)">mdi-delete</v-icon>
                 </td>
               </tr>
-              <h3>Total:{{ totalPrecio }} </h3>
-              <h3>Cantidad de Productos:{{ totalProductos }}</h3>
+              <h3>Total: {{ precioTotal }} </h3>
+              <h3>Cantidad de Productos: {{ totalDeProductos }}</h3>
             </tbody>
           </template>
         </v-simple-table>
         <v-row class="text-center">
-        <v-row class="mt-4">
-          <v-col cols="12" sm="6">
-            <v-btn color="red" block @click="limpiarCarrito">Limpiar Carrito</v-btn>
-          </v-col>
-          <v-col cols="12" sm="6">
-            <v-btn color="grey-darken-4" block @click="irADireccionEntrega">Siguiente</v-btn>
-          </v-col>
-        </v-row></v-row>
+          <v-row class="mt-4">
+            <v-col cols="12" sm="6">
+              <v-btn color="red" block @click="limpiarCarrito">Limpiar Carrito</v-btn>
+            </v-col>
+            <v-col cols="12" sm="6">
+              <v-btn color="grey-darken-4" block @click="irADireccionEntrega">Siguiente</v-btn>
+            </v-col>
+          </v-row>
+        </v-row>
       </v-card-text>
     </v-card>
   </v-container>
 </template>
+
 <script setup>
 import { useCartStore } from '@/store/carritostore.js';
 import { useRouter } from 'vue-router';
 import { computed } from 'vue';
 
-const cartStore = useCartStore();
+const storeCarrito = useCartStore();
 const router = useRouter();
 
-const productos = computed(() => cartStore.items);
-const totalProductos = computed(() => cartStore.count);
-const totalPrecio = computed(() => cartStore.total);
+const listaProductos = computed(() => storeCarrito.items);
+const totalDeProductos = computed(() => storeCarrito.contar);
+const precioTotal = computed(() => storeCarrito.total);
 
-const removerProducto = (index) => {
-  cartStore.clearItem(productos.value[index].nombre);
+const eliminarProducto = (index) => {
+  storeCarrito.limpiarProducto(listaProductos.value[index].nombre);
 };
 
 const actualizarCantidad = (index, nuevaCantidad) => {
-  cartStore.setItemCount(productos.value[index], nuevaCantidad);
+  storeCarrito.establecerCantidadProducto(listaProductos.value[index], nuevaCantidad);
 };
 
 const limpiarCarrito = () => {
-  cartStore.items = [];
+  storeCarrito.items = [];
 };
 
 const irADireccionEntrega = () => {
@@ -76,7 +78,7 @@ const irADireccionEntrega = () => {
 </script>
 
 <style>
-th{
+th {
   padding-left: 10px;
 }
 @media(max-width: 600px) {

@@ -1,34 +1,35 @@
 import { defineStore } from 'pinia';
 import { groupBy } from 'lodash';
+import axios from 'axios';
 
 export const useCartStore = defineStore('CartStore', {
   state: () => ({
     items: [],
-    totalProducts: 0,
+    totalProductos: 0,
   }),
 
   getters: {
-    count: (state) => {
-      const countedProducts = state.items.reduce((count, producto) => {
-        return count + producto.cantidad;
+    contar: (state) => {
+      const productosContados = state.items.reduce((conteo, producto) => {
+        return conteo + producto.cantidad;
       }, 0);
-      return countedProducts;
+      return productosContados;
     },
-    isEmpty: (state) => state.count === 0,
+    estaVacio: (state) => state.contar === 0,
 
-    grouped: (state) => {
-      const grouped = groupBy(state.items, (producto) => producto.nombre);
-      const sorted = Object.keys(grouped).sort();
-      let inOrder = {};
-      sorted.forEach((key) => (inOrder[key] = grouped[key]));
-      return inOrder;
+    agrupados: (state) => {
+      const agrupados = groupBy(state.items, (producto) => producto.nombre);
+      const ordenados = Object.keys(agrupados).sort();
+      let enOrden = {};
+      ordenados.forEach((key) => (enOrden[key] = agrupados[key]));
+      return enOrden;
     },
 
-    groupCount: (state) => (nombre) => state.grouped[nombre]?.length || 0,
+    cantidadGrupo: (state) => (nombre) => state.agrupados[nombre]?.length || 0,
 
     total: (state) => {
       return state.items.reduce((total, producto) => {
-        return total + producto.precio * producto.cantidad; // Calcular precio total por pieza por cantidad
+        return total + producto.precio * producto.cantidad; // Calcular el precio total por pieza por cantidad
       }, 0);
     },
   },
@@ -37,44 +38,71 @@ export const useCartStore = defineStore('CartStore', {
     checkout() {
       const authUserStore = useAuthUserStore();
       alert(`
-        ${authUserStore.username} just bought ${this.count} items at a total of $${this.total}
+        ${authUserStore.username} acaba de comprar ${this.contar} productos por un total de $${this.total}
       `);
     },
 
-    addItems(count, producto) {
-  const existingProduct = this.items.find((item) => item.nombre === producto.nombre);
+    agregarProductos(cantidad, producto) {
+      const productoExistente = this.items.find((item) => item.nombre === producto.nombre);
 
-  if (existingProduct) {
-    existingProduct.cantidad += count;
-  } else {
-    // Añadir el nuevo producto con su cantidad
-    this.items.push({ ...producto, cantidad: count });
-  }
-},
-    clearItem(nombreProducto) {
+      if (productoExistente) {
+        productoExistente.cantidad += cantidad;
+      } else {
+        // Añadir el nuevo producto con su cantidad
+        this.items.push({ ...producto, cantidad: cantidad });
+      }
+    },
+    
+    limpiarProducto(nombreProducto) {
       this.items = this.items.filter((producto) => producto.nombre !== nombreProducto);
     },
 
-    setItemCount(producto, count) {
-      this.clearItem(producto.nombre);
-      this.addItems(count, producto);
+    establecerCantidadProducto(producto, cantidad) {
+      this.limpiarProducto(producto.nombre);
+      this.agregarProductos(cantidad, producto);
     },
-    async fetchAndAddProductsFromAPI() {
-      try {
-        const response = await axios.get('http://tu-api.com/productos'); // Cambia la URL a tu endpoint de productos
-        const productsFromAPI = response.data; // Supongamos que la respuesta es un array de productos
 
-        // Agregar los productos obtenidos al carrito utilizando el método existente addItems
-        productsFromAPI.forEach((product) => {
-          this.addItems(1, product); // Agregar 1 unidad de cada producto al carrito
+    async obtenerYAgregarProductosDesdeAPI() {
+      try {
+        const respuesta = await axios.get('http://localhost/productos');
+        const productosDesdeAPI = respuesta.data;
+
+        // Agregar los productos obtenidos al carrito utilizando el método agregarProductos
+        productosDesdeAPI.forEach((producto) => {
+          this.agregarProductos(1, producto);
         });
 
-        // Podrías hacer más cosas aquí, como actualizar el estado o notificar al usuario
+        // Puedes realizar más acciones aquí, como actualizar el estado o notificar al usuario
       } catch (error) {
         console.error('Error al obtener productos desde la API:', error);
       }
-    
-  },
-    
+    },
+
+    async obtenerProductosDesdeAPI() {
+      try {
+        const respuesta = await axios.get('http://localhost/mostrarProducto');
+        const productosDesdeAPI = respuesta.data;
+
+        // Actualizar el estado del carrito con los productos obtenidos
+        productosDesdeAPI.forEach((producto) => {
+          this.agregarProductos(1, producto);
+        });
+
+        // Más acciones aquí si es necesario
+
+      } catch (error) {
+        console.error('Error al obtener productos desde la API:', error);
+      }
+    },
+
+    // Método para agregar un producto al carrito mediante la API
+    async agregarProductoAlCarrito(producto) {
+      try {
+        await axios.post('https:localhost/Insertarproducto', producto);
+        // Actualizar el estado del carrito o realizar otras acciones si es necesario
+      } catch (error) {
+        console.error('Error al agregar el producto al carrito:', error);
+      }
+    },
   },
 });

@@ -39,10 +39,10 @@
         </th>
         
         <th>
-          <v-text-field style="width: auto;" v-model=""></v-text-field>
+          <v-text-field style="width: auto;" v-model="costo"></v-text-field>
         </th>
         <th>
-          <v-text-field style="width: auto;"></v-text-field>
+          <v-text-field style="width: auto;" v-model="precio"></v-text-field>
         </th>
         <th><lista></lista></th>
       </tr>

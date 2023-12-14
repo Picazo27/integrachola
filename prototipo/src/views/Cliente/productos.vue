@@ -5,34 +5,34 @@
     <br>
     <v-row align="center" justify="center">
       <v-col
-        v-for="(product, index) in productStore.products"
+        v-for="(producto, index) in gymProductos.productos"
         :key="index"
         cols="auto"
       >
         <v-card
           class="mx-auto"
           max-width="250"
-          :variant="product.variant"
+          :variant="producto.variant"
         >
           <v-card-item>
             <div>
               <div class="text-h6 mb-1 text-center">
-                {{ product.nombre }}
+                {{ producto.nombre }}
               </div>
               <div class="producto">
                 <img
-                  :src="product.imagen"
+                  :src="producto.imagen"
                   style="width: 100%; height: 100%;"
                   :aspect-ratio="1"
                 >
               </div>
               <div class="text-h6 mb-1 text-center red">
-                <h2>${{ product.precio }}</h2>
+                <h2>${{ producto.precio }}</h2>
               </div>
             </div>
           </v-card-item>
           <v-card-actions>
-            <botoncart @click="addToCart(product)"></botoncart>
+            <botoncart @click="agregarAlCarrito(producto)"></botoncart>
             <input type="number">
           </v-card-actions>
         </v-card>
@@ -185,26 +185,25 @@
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import { useCartStore } from '@/store/carritostore.js';
-import { useProductStore } from '@/store/productosstore.js'; // Importa tu tienda de productos
+import { useProductStore } from '@/store/productosstore.js'; 
+const gymProductos = useProductStore();
+const gymCarrito = useCartStore();
 
-const cartStore = useCartStore();
-const productStore = useProductStore();
-
-const fetchProducts = async () => {
+const obtenerProductos = async () => {
   try {
-    const response = await axios.get('http://localhost/productos');
-    productStore.products = response.data; // Actualiza los productos en la tienda de productos
+    const respuesta = await axios.get('http://localhost/productos');
+    gymProductos.productos = respuesta.data; // Actualiza los productos en la tienda de productos
   } catch (error) {
     console.error('Error al obtener productos:', error);
   }
 };
 
 onMounted(() => {
-  fetchProducts();
+  obtenerProductos();
 });
 
-const addToCart = (product) => {
-  cartStore.addItems(1, product);
-  window.alert(`¡Has agregado ${product.name} a tu carrito!`);
+const agregarAlCarrito = (producto) => {
+  gymCarrito.agregarItems(1, producto);
+  window.alert(`¡Has agregado ${producto.nombre} a tu carrito!`);
 };
 </script>

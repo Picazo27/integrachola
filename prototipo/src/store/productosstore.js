@@ -3,23 +3,23 @@ import axios from 'axios';
 
 export const useProductStore = defineStore('productStore', {
   state: () => ({
-    products: [],
+    productos: [],
   }),
 
   actions: {
-    async fetchProducts() {
+    async obtenerProductos() {
       try {
-        const response = await axios.get('http://localhost/productos');
-        this.products = response.data;
+        const respuesta = await axios.get('http://localhost/productos');
+        this.productos = respuesta.data;
       } catch (error) {
         console.error('Error al obtener productos:', error);
       }
     },
 
-    addToCart(product) {
-      const cartStore = useCartStore(); // Asegúrate de importar y usar la tienda de carrito aquí
-      cartStore.addItems(1, product);
-      window.alert(`¡Has agregado ${product.name} a tu carrito!`);
+    agregarAlCarrito(producto) {
+      const carritoStore = useCartStore(); // Asegúrate de importar y utilizar la tienda de carrito aquí
+      carritoStore.agregarItems(1, producto);
+      window.alert(`¡Has agregado ${producto.nombre} a tu carrito!`);
     },
   },
 });
