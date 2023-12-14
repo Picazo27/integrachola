@@ -168,19 +168,24 @@ public function insertarProducto()
 public function mostrarUsuario()
 {
     try {
-       
-        
-        // Ahora puedes usar $userId para obtener información específica del usuario
-        $usuario = Table::query("SELECT users.nombre, users.apellido_p, users.apellido_m, users.telefono, users.user, users.contrasena,
-            direcciones.calle, direcciones.numero, direcciones.colonia, direcciones.codigo_postal
-            FROM users
-            INNER JOIN direccion_user ON users.id = direccion_user.id_user
-            INNER JOIN direcciones ON direcciones.id = direccion_user.id_direccion
-            WHERE users.id = $userId;");
+        // Verificar si el usuario está autenticado (por ejemplo, si existe un ID de usuario en la sesión)
+        if (isset($_SESSION['user_id'])) {
+            $userId = $_SESSION['user_id'];
 
-        $usuario = new Success($usuario);
-        $usuario->Send();
-        return $usuario;
+            // Ahora puedes usar $userId para obtener información específica del usuario
+            $usuario = Table::query("SELECT users.nombre, users.apellido_p, users.apellido_m, users.telefono, users.user, users.contrasena,
+                direcciones.calle, direcciones.numero, direcciones.colonia, direcciones.codigo_postal
+                FROM users
+                INNER JOIN direccion_user ON users.id = direccion_user.id_user
+                INNER JOIN direcciones ON direcciones.id = direccion_user.id_direccion
+                WHERE users.id = $userId;");
+
+            $usuario = new Success($usuario);
+            $usuario->Send();
+            return $usuario;
+        } else {
+            throw new \Exception('Usuario no autenticado');
+        }
     } catch (\Exception $e) {
         $s = new Failure(401, $e->getMessage());
         return $s->Send();
