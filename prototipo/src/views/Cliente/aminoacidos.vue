@@ -1,6 +1,6 @@
 <template>
   <v-container style="margin-top: 80px;">
-    <h1 style="margin-top: 35px;">Aminoácidos</h1>
+    <h1 class="re" style="margin-top: 35px;">Aminoácidos</h1>
     <br>
     <v-row align="center" justify="center">
       <v-col
@@ -38,7 +38,18 @@
 </template>
 
 <style>
-  /* Estilos */
+img {
+    height: 250px;
+    width: 250px;
+  }
+  h1 {
+    text-align: center;
+  }
+  input {
+    height: 30px;
+    width: 70px;
+    margin: 20px;
+  }
 </style>
 
 <script setup>

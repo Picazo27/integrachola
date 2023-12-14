@@ -30,6 +30,11 @@
   </div>
 </v-container>
 </template>
+<style>
+.re{
+  text-align: center;
+}
+</style>
 <script setup>
 import botonreg from '@/components/botonregis.vue'
 import axios from 'axios';

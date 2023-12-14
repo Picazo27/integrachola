@@ -1,7 +1,7 @@
 <template>
     <v-app id="inspire">
       <div class="menula">
-      <v-navigation-drawer id="menubar" v-model="drawer" permanent="$vuetify.breakpoint.mdAndUp" class="hideen-lg-and-up" >
+      <v-navigation-drawer id="menubar" v-model="drawer" permanent=vuetify.breakpoint.mdAndUp class="hideen-lg-and-up" >
         <v-icon img src="../img/logopicazo.png"></v-icon>
         <v-app-bar-title><buscador></buscador></v-app-bar-title>
        <RouterLink to="productos"> <v-app-bar-title class="titulo2">Promociones</v-app-bar-title></RouterLink>

@@ -4,29 +4,28 @@
     <br>
     <v-row align="center" justify="center">
       <v-col
-        v-for="(product, index) in creatinas"
+        v-for="(creatine, index) in creatines"
         :key="index"
         cols="auto"
       >
         <v-card
           class="mx-auto"
-          max-width="244"
-          outlined
+          max-width="344"
         >
           <v-card-item>
             <div>
               <div class="text-overline mb-1">
-                {{ product.variant }}
+                {{ creatine.variant }}
               </div>
               <div class="text-h6 mb-1">
-                {{ product.nombre_producto }}
+                {{ creatine.nombre_producto }}
               </div>
-              <div><img :src="product.imagen" class="img-card" alt="Creatina"></div>
+              <div class="creatina"><img :src="creatine.imagen" alt="Creatina" style="height: 350px; width: 350px;"></div>
             </div>
           </v-card-item>
 
           <v-card-actions>
-            <v-btn @click="addToCart(product)">
+            <v-btn @click="addToCart(creatine)">
               Agregar al Carrito
             </v-btn>
             <input type="number">
@@ -38,45 +37,44 @@
 </template>
 
 <style>
-  img {
-    height: 250px;
-    width: 250px;
-  }
-  h1 {
+img{
+    height: 350px;
+    width: 350px;
+}
+h1{
     text-align: center;
-  }
-  input {
+}
+input{
     height: 30px;
     width: 70px;
     margin: 20px;
-  }
+}
 </style>
 
 <script setup>
-  import { ref, onMounted } from 'vue';
-  import axios from 'axios';
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
+import { useProductStore } from '@/store/productosstore.js';
 
-  const creatinas = ref([]);
-  import { useProductStore } from '@/store/productosstore.js';
+const creatines = ref([]);
 
 const productStore = useProductStore();
+
+const addToCart = (product) => {
+  // Lógica para agregar al carrito
+  console.log('Agregado al carrito:', product);
+};
 
 onMounted(() => {
   productStore.fetchProducts();
 });
 
-  const addToCart = (product) => {
-    // Lógica para agregar al carrito
-    console.log('Agregado al carrito:', product);
-  };
-
-  onMounted(async () => {
-    try {
-      const response = await axios.get('http://localhost/creatina'); // Reemplaza con tu ruta real
-      creatinas.value = response.data.data; // Ajusta esto según la estructura de tus datos
-    } catch (error) {
-      console.error('Error fetching creatinas:', error);
-      alert('Hubo un error al cargar los datos de las creatinas. Por favor, inténtalo de nuevo más tarde.');
-    }
-  });
+onMounted(async () => {
+  try {
+    const response = await axios.get('http://localhost/creatinas');
+    creatines.value = response.data.data; // Asegúrate de ajustar esto según la estructura de tus datos
+  } catch (error) {
+    console.error('Error fetching creatines:', error);
+  }
+});
 </script>

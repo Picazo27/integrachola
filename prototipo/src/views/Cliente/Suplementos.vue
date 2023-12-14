@@ -1,6 +1,6 @@
 <template>
   <v-container style="margin-top: 80px;">
-    <h1 style="margin-top: 30px;">Suplementos</h1>
+    <h1 class="re" style="margin-top: 30px;">Suplementos</h1>
     <v-combobox
       v-model="selectedSupplement"
       label="Suplementos"
@@ -92,27 +92,4 @@ const agregarAlCarrito = (producto) => {
   carritoStore.agregarItems(1, producto);
   window.alert(`¡Has agregado ${producto.title} a tu carrito!`);
 };
-
-export const useProductStore = defineStore('productStore', {
-  state: () => ({
-    productos: [], 
-    productosFiltrados: [], 
-  }),
-
-  actions: {
-    async obtenerProductos() {
-      try {
-        const respuesta = await axios.get('http://localhost/productos');
-        this.productos = respuesta.data;
-      } catch (error) {
-        console.error('Error al obtener productos:', error);
-      }
-    },
-
-    agregarAlCarrito(producto) {
-      const carritoStore = useCartStore();
-      carritoStore.agregarItems(1, producto);
-      window.alert(`¡Has agregado ${producto.nombre} a tu carrito!`);
-    },
-  },
 </script>
