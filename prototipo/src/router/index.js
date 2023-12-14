@@ -18,7 +18,7 @@ const routes = [
       
       {
         path: 'suplementos',
-        component: () => import('../views/Cliente/productos.vue'),
+        component: () => import('../views/Cliente/Suplementos.vue'),
       },
       {
         path: 'proteinas',
@@ -27,6 +27,14 @@ const routes = [
       {
         path: 'creatinas',
         component: () => import('../views/Cliente/creatinas.vue'),
+      },
+      {
+        path: 'aminoacidos',
+        component: () => import('../views/Cliente/aminoacidos.vue'),
+      },
+      {
+        path: 'preentreno',
+        component: () => import('../views/Cliente/preentreno.vue'),
       },
       {
         path: 'iniciosesion',
@@ -48,13 +56,14 @@ const routes = [
       {
             path: 'direccion-entrega',
             name: 'direccion-entrega',
-            component: () => import('../views/Cliente/Carrito/dirreccion.vue'),
+            component: () => import('@/views/Cliente/Carrito/dirreccion.vue'),
       },
       {
             path: 'metodopago',
             name: 'metodopago',
             component: () => import('../views/Cliente/Carrito/metodopago.vue'),
       },
+      
       {
         path:'Administracion',
         name:'Administracion',

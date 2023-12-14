@@ -1,33 +1,43 @@
 <template>
-  <v-container>
-    <h1>Productos Destacados</h1>
+     <carrusel></carrusel>
+  <v-container style="margin-top: 80px;">
+    <h1 style="margin-top: 25px;">Productos Destacados</h1>
     <br>
     <v-row align="center" justify="center">
       <v-col
-        v-for="(product, index) in products"
+        v-for="(producto, index) in gymProductos.productos"
         :key="index"
         cols="auto"
       >
         <v-card
           class="mx-auto"
-          max-width="344"
-          :variant="product.variant"
+          max-width="250"
+          :variant="producto.variant"
         >
           <v-card-item>
             <div>
               <div class="text-h6 mb-1 text-center">
-                {{ product.title }}
+                {{ producto.nombre }}
               </div>
-              <div class="producto"><img :src="product.image"></div>
+              <div class="producto">
+                <img
+                  :src="producto.imagen"
+                  style="width: 100%; height: 100%;"
+                  :aspect-ratio="1"
+                >
+              </div>
+              <div class="text-h6 mb-1 text-center red">
+                <h2>${{ producto.precio }}</h2>
+              </div>
             </div>
           </v-card-item>
-
           <v-card-actions>
-           <botoncart></botoncart>
+            <botoncart @click="agregarAlCarrito(producto)"></botoncart>
             <input type="number">
           </v-card-actions>
         </v-card>
       </v-col>
+      <br>
       <h1 class="red">¿PORQUÉ COMPRAR EN PICAZO GYM?</h1>
 <h2 class="ce">Contamos con una amplia variedad de suplementos deportivos en México. Además tienes la opción de pagar tu pedido en cuando recojas en tienda o se te entregue en tu domicilio, contamos con terminal. El proceso de  pedido es muy sencillo y seguro ¡Pruébalo!</h2>
     </v-row>
@@ -131,31 +141,20 @@
 </v-col>
 </v-row>
 
-<v-row justify="center">
-  <v-col cols="8">
-    <h1 class="red">Ganadores de Peso</h1>
-<v-row align="center">
-  <v-col cols="12" sm="6">
-    <h2>Los ganadores de pesos son suplementos específicamente diseñados para proporcionar a la persona los macronutrientes, minerales, carbohidratos y la concentrarción de proteína necesaria para fomentar la ganancia de peso. Además un suplemento ganador de peso puede ayudar a contrarestar la pérdida de masa muscular generada por ejercicios cardiovasculares.</h2>
-  </v-col>
-  <v-col cols="12" sm="6">
-    <v-img src="https://whey.cl/wp-content/uploads/2020/11/cual-es-la-mejor-proteina-para-ganar-masa-muscular-sin-engordar-1.png"></v-img>
-  </v-col>
-</v-row>
-  </v-col>
-</v-row>
+
 <seccion></seccion>
 
   </v-container>
 </template>
 
 <style>
-@media screen and (min-width: 790px) {
-  .red {
+.red {
     color: #D70000;
     padding-bottom: 4px;
     padding-top: 4px;
   }
+@media screen and (min-width: 790px) {
+  
   img {
     width: 750px;
     height: 300px;
@@ -179,32 +178,32 @@
     width: 70px;
     margin: 20px;
   }
+  
 </style>
 
 <script setup>
-import botoncart from '@/components/botonagg.vue'
-import seccion from '@/components/section.vue'
-  const products = [
-    {
-      variant: 'outlined',
-      title: 'Creatina',
-      image: 'https://proteinpalacemx.com/cdn/shop/products/META_NUTRITION_CREATINE_100_SERVICIOS_5G_proteinpalacemx_2_900x.jpg?v=1662403840'
-    },
-    {
-      variant: 'outlined',
-      title: 'Proteína en Polvo',
-      image: 'https://www.43supplements.com/wp-content/uploads/2022/09/Vainilla.jpg'
-    },
-    {
-      variant:'outlined',
-      title: 'Pre entreno',
-      image: 'https://i5.walmartimages.com.mx/mg/gm/3pp/asr/09245e09-b13a-47e9-9e69-efdfc2e5fa4d.cf0f70e63c38cdfb5a2fdf9fa7bc59c5.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff'
-    },
-    {
-      variant:'outlined',
-      title:'Aminoacidos',
-      image: 'https://i0.wp.com/www.fitstore.com.mx/wp-content/uploads/2022/01/2264us_mutant_bcaa_9.7_tropical_mango_flavor_363_g_12.8_oz_v1.00-ms-1.png?fit=500%2C600&ssl=1'
-    },
-  ];
-  
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
+import { useCartStore } from '@/store/carritostore.js';
+import { useProductStore } from '@/store/productosstore.js'; 
+const gymProductos = useProductStore();
+const gymCarrito = useCartStore();
+
+const obtenerProductos = async () => {
+  try {
+    const respuesta = await axios.get('http://localhost/productos');
+    gymProductos.productos = respuesta.data; // Actualiza los productos en la tienda de productos
+  } catch (error) {
+    console.error('Error al obtener productos:', error);
+  }
+};
+
+onMounted(() => {
+  obtenerProductos();
+});
+
+const agregarAlCarrito = (producto) => {
+  gymCarrito.agregarItems(1, producto);
+  window.alert(`¡Has agregado ${producto.nombre} a tu carrito!`);
+};
 </script>

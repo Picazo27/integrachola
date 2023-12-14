@@ -1,16 +1,16 @@
 <template>
+  <v-container style="margin-top: 100px;">
   <v-card
     class="mx-auto"
     color="grey-lighten-3"
     max-width="800"
   >
     <v-toolbar flat color="grey-darken-4">
-      <v-btn icon="mdi-account"></v-btn>
+      <v-btn icon="mdi-account" style="margin-top: 17px;"></v-btn>
 
-      <v-toolbar-title class="font-weight-light">
+      <v-toolbar-title class="font-weight-light" style="margin-top: 30px;">
       Perfil
       </v-toolbar-title>
-
       <v-spacer></v-spacer>
 
       <v-btn
@@ -26,38 +26,41 @@
     </v-toolbar>
 <div class="usuario">
       <v-row>
-        <v-col cols="6">
+        <v-col cols="12">
         <v-card-text>
        
           <v-text-field
         :disabled="!isEditing"
         base-color="grey-darken-4"
         label="Nombre"
+        v-model="userProfile.nombre"
       ></v-text-field>
       <v-text-field
         :disabled="!isEditing"
         base-color="grey-darken-4"
         label="Apellido Paterno"
+        v-model="userProfile.apellido_p"
       ></v-text-field>
       <v-text-field
         :disabled="!isEditing"
         base-color="grey-darken-4"
         label="Apellido Materno"
+        v-model="userProfile.apellido_m"
       ></v-text-field>
       <v-text-field
         :disabled="!isEditing"
         base-color="grey-darken-4"
         label="Calle"
+        v-model="userProfile.calle"
       ></v-text-field>
       <v-text-field
         :disabled="!isEditing"
         base-color="grey-darken-4"
         label="Numero Interior o Exterior"
+        v-model="userProfile.numero"
       ></v-text-field>
       </v-card-text>
-        </v-col>
         
-        <v-col cols="6">
           <v-card-text>
           <v-autocomplete
         :disabled="!isEditing"
@@ -67,6 +70,7 @@
         item-title="name"
         item-value="abbr"
         label="Municipio"
+        v-model="userProfile.municipio"
       ></v-autocomplete>
 
       <v-text-field
@@ -78,21 +82,25 @@
         :disabled="!isEditing"
         base-color="grey-darken-4"
         label="C.P (Codigo Postal)"
+        v-model="userProfile.codigo_postal"
       ></v-text-field>
       <v-text-field
         :disabled="!isEditing"
         base-color="grey-darken-4"
         label="Correo Electronico"
+        v-model="userProfile.user"
       ></v-text-field>
       <v-text-field
         :disabled="!isEditing"
         base-color="grey-darken-4"
         label="Telefono"
+        v-model="userProfile.telefono"
       ></v-text-field>
     <v-text-field
         :disabled="!isEditing"
         base-color="grey-darken-4"
         label="Contrasena"
+        v-model="userProfile.contrasena"
       ></v-text-field>
           </v-card-text>
           </v-col>
@@ -124,6 +132,7 @@
      Tu perfil se ha actualizado
     </v-snackbar>
   </v-card>
+</v-container>
 </template>
 <style>
 .usuario{
@@ -131,32 +140,38 @@
   width: 800px;
 }
 </style>
-<script>
-  export default {
-    data: () => ({
-      hasSaved: false,
-      isEditing: null,
-      states: [
-        { name: 'Torreon', abbr: 'TRC', id: 1 },
-        { name: 'Gomez Palacio', abbr: 'GP', id: 2 },
-        { name: 'Lerdo', abbr: 'LRD', id: 3 },
-      
-      ],
-    }),
+<script setup>
+import axios from 'axios';
+import { ref, onMounted } from 'vue';
 
-    methods: {
-      customFilter (itemTitle, queryText, item) {
-        const textOne = item.raw.name.toLowerCase()
-        const textTwo = item.raw.abbr.toLowerCase()
-        const searchText = queryText.toLowerCase()
+const userProfile = ref({});
+const isEditing = ref(false);
 
-        return textOne.indexOf(searchText) > -1 ||
-          textTwo.indexOf(searchText) > -1
-      },
-      save () {
-        this.isEditing = !this.isEditing
-        this.hasSaved = true
-      },
-    },
+const fetchUserProfile = async () => {
+  try {
+    const response = await axios.get('http://localhost:PUERTO/api/perfil');
+    userProfile.value = response.data;
+  } catch (error) {
+    console.error('Error fetching user profile:', error);
   }
+};
+
+const saveProfileChanges = async () => {
+  try {
+    await axios.put('http://localhost:PUERTO/api/perfil', userProfile.value);
+    isEditing.value = false;
+    // Mostrar una notificación o mensaje de éxito
+  } catch (error) {
+    console.error('Error saving profile changes:', error);
+  }
+};
+
+onMounted(fetchUserProfile);
+
+export {
+  userProfile,
+  isEditing,
+  fetchUserProfile,
+  saveProfileChanges
+};
 </script>
