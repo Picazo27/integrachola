@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/',   
+    path: '/Administracion',   
     component: () => import('@/views/administradoR.vue'),
     children: [
       {
@@ -35,7 +35,7 @@ const routes = [
 
 
   {
-    path: '/empleados',
+    path: '/',
     component: () => import('@/views/Empleado/PricipaL.vue'),
     children: [
       {
@@ -43,7 +43,7 @@ const routes = [
         component: () => import ('@/views/Empleado/iniciO.vue'),
       },
       {
-        path:'detalle orden',
+        path:'detalle_orden',
         component: ()=> import ('@/views/Empleado/detalle_orden.vue'),
       },
       {
@@ -51,7 +51,7 @@ const routes = [
         component: ()=> import ('@/views/Empleado/iniciO.vue'),
       },
       {
-        path:'detalle producto',
+        path:'detalle_producto',
         component: ()=> import ('@/views/Empleado/DetalleProducto.vue'),
       },
     ],

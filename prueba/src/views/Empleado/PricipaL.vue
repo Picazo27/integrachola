@@ -11,13 +11,13 @@
        </v-row>
        <v-divider></v-divider>
        <v-list class="custom-list">
-        <RouterLink to="ordenes"><v-list-item><label>Ordenes</label></v-list-item></RouterLink>
+        <RouterLink to="/ordenes"><v-list-item><label>Ordenes</label></v-list-item></RouterLink>
         <v-divider></v-divider>
-        <RouterLink to="detalle orden"><v-list-item><label>Detalle Orden</label></v-list-item></RouterLink>
+        <RouterLink to="/detalle_orden"><v-list-item><label>Detalle Orden</label></v-list-item></RouterLink>
         <v-divider></v-divider>
-        <RouterLink to="productos"><v-list-item><label>Productos</label></v-list-item></RouterLink>
+        <RouterLink to="/productos"><v-list-item><label>Productos</label></v-list-item></RouterLink>
         <v-divider></v-divider>
-        <RouterLink to="detalle producto"><v-list-item><label>Detalle Producto</label></v-list-item></RouterLink>
+        <router-link to="/detalle_producto"><v-list-item><label>Detalle Producto</label></v-list-item></router-link>
         <v-divider></v-divider>
        </v-list>
        <v-row style="justify-content: center; margin-top: 10px;">
@@ -33,8 +33,10 @@
 
           <v-container style="justify-content:center; margin-left: 170px;">
             <RouterView></RouterView>
-          </v-container>
 
+           
+            
+          </v-container>
         </v-app>
     </template>
 
