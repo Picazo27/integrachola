@@ -4,7 +4,7 @@
     <br>
     <v-row align="center" justify="center">
       <v-col
-        v-for="(creatine, index) in creatines"
+        v-for="(product, index) in creatines"
         :key="index"
         cols="auto"
       >
@@ -15,12 +15,12 @@
           <v-card-item>
             <div>
               <div class="text-overline mb-1">
-                {{ creatine.variant }}
+                {{ product.variant }}
               </div>
               <div class="text-h6 mb-1">
-                {{ creatine.nombre_producto }}
+                {{ product.nombre_producto }}
               </div>
-              <div class="creatina"><img :src="creatine.imagen" alt="Creatina" style="height: 350px; width: 350px;"></div>
+              <div class="creatina"><img :src="product.imagen" alt="Creatina" style="height: 350px; width: 350px;"></div>
             </div>
           </v-card-item>
 
@@ -56,7 +56,7 @@ import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import { useProductStore } from '@/store/productosstore.js';
 
-const creatines = ref([]);
+const productos = ref([]);
 
 const productStore = useProductStore();
 
