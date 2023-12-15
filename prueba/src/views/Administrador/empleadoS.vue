@@ -35,7 +35,10 @@
            <td>{{ item.RFC }}</td>
            <td>{{ item.Direccion }}</td>
            <td>{{ item.Correo }}</td>
-           <td>{{ item.Estado }}</td>
+           <td>{{ item.Estado }} 
+            <v-icon style="margin-left: 70px;">mdi-delete</v-icon>
+          </td>
+         
            
          </tr>
        </tbody>
@@ -49,7 +52,7 @@
 </template>
 
 <script setup>
-import boton from '@/components/botonAnadir.vue'
+import boton from '@/components/botonempleadO.vue'
 </script>
 
 

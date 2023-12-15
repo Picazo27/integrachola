@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/Administracion',   
+    path: '/',   
     component: () => import('@/views/administradoR.vue'),
     children: [
       {
@@ -35,7 +35,7 @@ const routes = [
 
 
   {
-    path: '/',
+    path: '/empleados',
     component: () => import('@/views/Empleado/PricipaL.vue'),
     children: [
       {

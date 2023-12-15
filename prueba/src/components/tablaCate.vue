@@ -20,12 +20,13 @@
         
         <tbody>
   
-          <tr 
+          <tr style="justify-content: center; justify-items: center; align-items: center; align-content: center;"
              class="text-center"
              v-for="item in desserts"
              :key="item.name">
              <td>{{ item.Categoria }}</td>
-             <td>{{ item.Productos }}</td>
+             <td>{{ item.Productos }}  <v-icon style="margin-left: 70px;">mdi-delete</v-icon>
+          </td>
              
            </tr>
   

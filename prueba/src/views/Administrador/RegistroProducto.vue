@@ -65,11 +65,9 @@
       <cartaImagen></cartaImagen>
     </v-col>
     <v-col class="d-flex align-center">
-      <v-btn @click="onButtonClick" color="green">Añadir imagen</v-btn>
-    </v-col>
-    <v-col class="d-flex align-center">
       <v-btn @click="onButtonClick" color="green">Guardar</v-btn>
     </v-col>
+   
   </v-row>
 
     </v-container>

@@ -128,6 +128,8 @@
    
    <style>
    
-   
+   .v-table{
+    width: 90%;
+   }
    
    </style>
