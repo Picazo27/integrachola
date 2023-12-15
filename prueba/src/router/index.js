@@ -24,7 +24,7 @@ const routes = [
       },
       {
         path:'inventario',
-        component: ()=> import ('@/views/Administrador/inventarIO.vue'),
+        component: ()=> import ('@/views/Administrador/detalle_orden.vue'),
       },
       {
         path:'categorias',
@@ -48,7 +48,7 @@ const routes = [
       },
       {
         path:'productos',
-        component: ()=> import ('@/views/Empleado/iniciO.vue'),
+        component: ()=> import ('@/views/Empleado/productO.vue'),
       },
       {
         path:'detalle_producto',
