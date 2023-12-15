@@ -49,9 +49,10 @@
 </template>
 
 <script setup>
+import { ref, computed } from 'vue';
 import { useCartStore } from '@/store/carritostore.js';
 import { useRouter } from 'vue-router';
-import { computed } from 'vue';
+import axios from 'axios';
 
 const storeCarrito = useCartStore();
 const router = useRouter();
@@ -75,6 +76,17 @@ const limpiarCarrito = () => {
 const irADireccionEntrega = () => {
   router.push({ name: 'direccion-entrega' });
 };
+
+const fetchData = async () => {
+  try {
+    const response = await axios.get('http://tu-api.com/productos-en-orden');
+    // Hacer algo con la respuesta
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
+
+fetchData();
 </script>
 
 <style>

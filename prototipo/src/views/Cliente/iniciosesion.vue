@@ -27,13 +27,7 @@
       <div class="text-subtitle-1 text-medium-emphasis d-flex align-center justify-space-between">
         Contrasena
 
-        <a
-          class="text-caption text-decoration-none text-red"
-          href="#"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Olvidaste tu Contrasena?</a>
+        
       </div>
 
       <v-text-field
@@ -53,9 +47,7 @@
         color="surface-variant"
         variant="tonal"
       >
-        <v-card-text class="text-medium-emphasis text-caption">
-          Si te equivocas 3 veces tu cuenta quedara bloqueada temporalmente por 3 horas
-        </v-card-text>
+        
       </v-card>
 
       <v-btn @click="mostrarAlertainiciarsesion"

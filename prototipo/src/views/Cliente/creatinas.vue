@@ -4,7 +4,7 @@
     <br>
     <v-row align="center" justify="center">
       <v-col
-        v-for="(product, index) in creatines"
+        v-for="(producto, index) in creatines"
         :key="index"
         cols="auto"
       >
@@ -15,12 +15,12 @@
           <v-card-item>
             <div>
               <div class="text-overline mb-1">
-                {{ product.variant }}
+                {{ producto.variant }}
               </div>
               <div class="text-h6 mb-1">
-                {{ product.nombre_producto }}
+                {{ producto.nombre_producto }}
               </div>
-              <div class="creatina"><img :src="product.imagen" alt="Creatina" style="height: 350px; width: 350px;"></div>
+              <div class="creatina"><img :src="producto.imagen" alt="Creatina" style="height: 350px; width: 350px;"></div>
             </div>
           </v-card-item>
 

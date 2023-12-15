@@ -46,8 +46,21 @@
 
 <script setup>
 import { ref } from 'vue';
-import { RouterLink } from 'vue-router';
-const tipoEntrega = ref(false);
+import axios from 'axios';
+
+const tipoEntrega = ref('');
 const otraEntrega = ref('');
-const otrasEntregas = ['Otra 1', 'Otra 2', 'Otra 3'];
+const otrasEntregas = ref([]);
+
+const fetchData = async () => {
+  try {
+    const response = await axios.get('http://tu-api.com/direcciones');
+    // Asigna los datos de las direcciones al array otrasEntregas
+    otrasEntregas.value = response.data;
+  } catch (error) {
+    console.error('Error al obtener direcciones:', error);
+  }
+};
+
+fetchData();
 </script>

@@ -23,15 +23,22 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useProductStore } from '@/store/productosstore.js'; // Reemplaza con la ruta correcta
 
 const loading = ref(false);
+const productStore = useProductStore();
+const productosRef = productStore.productos; // Accede a la referencia
 
-const onClick = () => {
+const onClick = async () => {
   loading.value = true;
 
-  setTimeout(() => {
+  try {
+    await productStore.obtenerProductos(); // Llama al método para obtener los productos desde la API
+  } catch (error) {
+    console.error('Error al buscar productos:', error);
+  } finally {
     loading.value = false;
-  }, 2000);
+  }
 };
 </script>
 

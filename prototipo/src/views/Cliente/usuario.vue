@@ -7,7 +7,6 @@
   >
     <v-toolbar flat color="grey-darken-4">
       <v-btn icon="mdi-account" style="margin-top: 17px;"></v-btn>
-
       <v-toolbar-title class="font-weight-light" style="margin-top: 30px;">
       Perfil
       </v-toolbar-title>
@@ -141,15 +140,15 @@
 }
 </style>
 <script setup>
+import { ref } from 'vue';
 import axios from 'axios';
-import { ref, onMounted } from 'vue';
 
 const userProfile = ref({});
 const isEditing = ref(false);
 
 const fetchUserProfile = async () => {
   try {
-    const response = await axios.get('http://localhost:PUERTO/api/perfil');
+    const response = await axios.get('http://localhost/perfil');
     userProfile.value = response.data;
   } catch (error) {
     console.error('Error fetching user profile:', error);
@@ -158,20 +157,15 @@ const fetchUserProfile = async () => {
 
 const saveProfileChanges = async () => {
   try {
-    await axios.put('http://localhost:PUERTO/api/perfil', userProfile.value);
+    await axios.put('http://localhost/perfil', userProfile.value);
     isEditing.value = false;
-    // Mostrar una notificación o mensaje de éxito
   } catch (error) {
     console.error('Error saving profile changes:', error);
   }
 };
 
-onMounted(fetchUserProfile);
+import { onMounted } from 'vue'; // Importa onMounted desde 'vue'
+onMounted(fetchUserProfile); // Llama a onMounted y pasa la función fetchUserProfile
 
-export {
-  userProfile,
-  isEditing,
-  fetchUserProfile,
-  saveProfileChanges
-};
+
 </script>
